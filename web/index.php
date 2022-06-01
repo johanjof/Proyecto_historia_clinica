@@ -1,6 +1,6 @@
 <?php 
 
-   /* include_once '../lib/conf/connection.php';
+ /*   include_once '../lib/conf/connection.php';
 
     $obj=new Connection(); */
 
@@ -9,7 +9,7 @@
 
     echo "<div class='container'>";
     
-    /* include_once '../view/partials/navbar.php'; */
+    include_once '../view/partials/navbar.php';
 
     if (isset($_GET['modulo'])){
         resolve();
