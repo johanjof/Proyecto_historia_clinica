@@ -30,7 +30,7 @@
             if (!$this->link) {
                 echo mysqli_error($this->link);
             } else {
-                echo "Conexión Exitosa";
+            
             }
         }
         public function getConnect(){
