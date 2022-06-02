@@ -17,7 +17,7 @@
                 <tr>
                 <td><?php echo $estr['estr_id']; ?></td>
                 <td><?php echo $estr['estr_nombre']; ?></td>
-                <td><a href="<?=geturl('Estrato', 'Estrato', 'getUpdate', array('estr_id'=>$estr['estr_id']))?>"><button class='btn btn-primary'>Editar</button></a></td>
+                <td><a href="<?=geturl('Estrato', 'Estrato', 'getUpdate', array('estr_id'=>$estr['estr_id']))?>"><button class='btn btn-info'>Editar</button></a></td>
                 <td><a href="<?=geturl('Estrato', 'Estrato', 'getDelete', array('estr_id'=>$estr['estr_id']))?>"><button class='btn btn-danger'>Eliminar</button></a></td>
     
                 <td></td>

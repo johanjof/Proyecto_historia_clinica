@@ -18,6 +18,7 @@ class EstratoController{
         $ejecutar=$obj->insert($sql);
         if ($ejecutar){
             echo redirect(getUrl("Estrato","Estrato","getInsert"));
+            
         }else{
             echo "Estas en un error menor";
         }
