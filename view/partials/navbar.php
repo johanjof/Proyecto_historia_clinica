@@ -18,7 +18,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","getInsert"); ?>">Registrar</a></li>
             <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","consult"); ?>">Consultar</a></li>
-            <li><hr class="dropdown-divider"></li>
+           
            
           </ul>
         </li>
@@ -41,7 +41,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo getUrl("Roles","Roles","getInsert"); ?>">Registrar</a></li>
             <li><a class="dropdown-item" href="<?php echo getUrl("Roles","Roles","consult"); ?>">Consultar</a></li>
-            <li><hr class="dropdown-divider"></li>
+           
            
           </ul>
         </li>
