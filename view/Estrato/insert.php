@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-md-4">
                 <label class="form-label">Nombre</label>
-                <input type="text" class="form-control" name="estr_nombre" placeholder="Ingrese el nombre del paciente" required>
+                <input type="text" class="form-control" name="estr_nombre" placeholder="Ingrese el nombre del estrato" required>
             </div>
             <div class="col-md-4 mt-4">
                 <input type="submit" value="Enviar" class="btn btn-success mt-2">
