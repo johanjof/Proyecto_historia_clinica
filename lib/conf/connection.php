@@ -26,12 +26,12 @@
         private function connect(){
             //(server, user, pass, database) --> Es el orden a la hora de conectar la base de datos
             $this->link=mysqli_connect($this->server,$this->user,$this->pass,$this->database);
-
+/* 
             if (!$this->link) {
                 echo mysqli_error($this->link);
             } else {
                 echo "Conexión Exitosa";
-            }
+            } */
         }
         public function getConnect(){
             return $this->link;

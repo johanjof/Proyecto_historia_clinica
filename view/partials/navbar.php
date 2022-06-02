@@ -16,23 +16,13 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","getInsert"); ?>">Registrar</a></li>
-            <li><a class="dropdown-item" href="<?php echo getUrl("Departamento","Departamento","consult"); ?>">Consultar</a></li>
+            <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","consult"); ?>">Consultar</a></li>
             <li><hr class="dropdown-divider"></li>
            
           </ul>
         </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Roles
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="<?php echo getUrl("Ciudad","Ciudad","getInsert"); ?>">Registrar</a></li>
-            <li><a class="dropdown-item" href="<?php echo getUrl("Ciudad","Ciudad","consult"); ?>">Consultar</a></li>
-            <li><hr class="dropdown-divider"></li>
-           
-          </ul>
-        </li>
+        
 
         
       </ul>
