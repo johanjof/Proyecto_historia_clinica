@@ -10,6 +10,7 @@
           <a class="nav-link active" aria-current="page" href="#">Inicio</a>
         </li>
         
+      <!--   Usuario -->  
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Usuario
@@ -22,6 +23,7 @@
           </ul>
         </li>
 
+     <!--    Estratos -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
            Estratos
@@ -30,7 +32,29 @@
             <li><a class="dropdown-item" href="<?php echo getUrl("Estrato","Estrato","getInsert"); ?>">Registrar</a></li>
             <li><a class="dropdown-item" href="<?php echo getUrl("Estrato","Estrato","consult"); ?>">Consultar</a></li>
           </ul>
+         <!--  Roles -->
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 
+            Roles
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?php echo getUrl("Roles","Roles","getInsert"); ?>">Registrar</a></li>
+            <li><a class="dropdown-item" href="<?php echo getUrl("Roles","Roles","consult"); ?>">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+           
+          </ul>
+        </li>
+        <!-- genero -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Genero
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?php echo getUrl("Genero","Genero","getInsert"); ?>">Registrar</a></li>
+            <li><a class="dropdown-item" href="<?php echo getUrl("Genero","Genero","consult"); ?>">Consultar</a></li>
+          </ul>
+        </li>
         
       </ul>
       <form class="d-flex">
