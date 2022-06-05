@@ -31,7 +31,7 @@
      
          }
      
-          public function consult(){
+       /*    public function consult(){
              $obj= new UsuarioModel();
      
              $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre,  r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id";
@@ -40,7 +40,7 @@
      
              include_once '../view/Usuario/consult.php';
      
-         }
+         } */
      
          public function getUpdate(){
              $obj=new UsuarioModel();
@@ -98,8 +98,44 @@
             }
         }
 
+        function consult(){
+            $obj=new UsuarioModel();
+            $sql="SELECT * FROM roles";
+            $roles=$obj->consult($sql);
+            if (isset($_POST['usu_nombre'])) {
+                if ($_POST['rol_id']!=NULL) {
+                    $sql="SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id and r.rol_id=".$_POST['rol_id'];
+                    if ($_POST['usu_nombre']!=NULL) {
+                        $sql.=" and u.usu_nombre like '%".$_POST['usu_nombre']."%'";
+                        if ($_POST['usu_docum']!=NULL) {
+                            $sql.=" and usu_docum like '%".$_POST['usu_docum']."%'";
+                        }
+                    } else if ($_POST['usu_docum']!=NULL) {
+                            $sql.=" and usu_docum=".$_POST['usu_docum'];
+		    }
+                } elseif ($_POST['usu_nombre']!=NULL) {
+                        $sql = "SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id and u.usu_nombre like '%".$_POST['usu_nombre']."%'";
+			if ($_POST['usu_docum']!=NULL) {
+                            $sql.=" and usu_docum=".$_POST['usu_docum'];
+			}
+		} elseif ($_POST['usu_docum']!=NULL) {
+                            $sql="SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id and  u.usu_docum like '%".$_POST['usu_docum']."%'";
+                        
+	    } else {
+                $sql="SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id";
+                     
+                }
+            
+            } else {
+                /* $sql="SELECT * FROM usuarios"; */
 
-     
-     }
-     
+                $sql="SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id";
+            }
+
+            $usuarios=$obj->consult($sql);
+            include_once '../view/usuario/consult.php'; 
+        }
+
+    }
+   
 ?>
