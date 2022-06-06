@@ -1,20 +1,22 @@
-<?php 
+<?php
+session_start();
+include_once '../lib/helpers.php';
+include_once '../view/partials/head.php';
 
- /*   include_once '../lib/conf/connection.php';
 
-    $obj=new Connection(); */
+if (isset($_SESSION['Documento'])) {
+  include_once '../view/partials/dashboard.php';
+  } else {
+  include '../view/login/Login.php';
+  }
+if (isset($_GET['modulo'])) {
+  $modulo = $_GET['modulo'];
+  $controlador = $_GET['controlador'];
+  $funcion = $_GET['funcion'];
+  getUrl($modulo, $controlador, $funcion);
+  resolve();
+}
 
-    include_once '../lib/helpers.php';
-    include_once '../view/partials/head.php';
-
-    echo "<div class='container'>";
-    
-    include_once '../view/partials/navbar.php';
-
-    if (isset($_GET['modulo'])){
-        resolve();
-    }
-
-    include_once '../view/partials/footer.php';
+include_once '../view/partials/footer.php';
 
 ?>
