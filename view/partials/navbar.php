@@ -18,7 +18,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","getInsert"); ?>">Registrar</a></li>
             <li><a class="dropdown-item" href="<?php echo getUrl("Usuario","Usuario","consult"); ?>">Consultar</a></li>
-           
+           <p>cabrones</p>
            
           </ul>
         </li>
