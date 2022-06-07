@@ -23,6 +23,7 @@
          <!-- <a class="navbar-brand" href="#"> <i class="fa fa-rocket fa-4"></i> </a> -->
       </div>
       <!-- navbar-header-->
+      <a href="<?php echo getUrl("Login","Login","cerrarSesion"); ?>">Salir</a>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
          <ul class="nav navbar-nav">
             <li class="active">
@@ -51,6 +52,14 @@
                <ul class="nav-pills nav-stacked" style="list-style-type:none;">
                   <li><a href="<?php echo getUrl("Estrato","Estrato","getInsert"); ?>"><span class="fa-stack fa-lg pull-left"><!-- <i class="fa fa-flag fa-stack-1x "></i> --></span>Registrar</a></li>
                   <li><a href="<?php echo getUrl("Estrato","Estrato","consult"); ?>"><span class="fa-stack fa-lg pull-left"><!-- <i class="fa fa-flag fa-stack-1x "></i> --></span>Consultar</a></li>
+               </ul>
+            </li>
+
+            <li>
+               <a href="#"><span class="fa-stack fa-lg pull-left"><!-- <i class="fa fa-flag fa-stack-1x "></i> --></span>Hobbies</a>
+               <ul class="nav-pills nav-stacked" style="list-style-type:none;">
+                  <li><a href="<?php echo getUrl("Hobbies","Hobbies","getInsert"); ?>"><span class="fa-stack fa-lg pull-left"><!-- <i class="fa fa-flag fa-stack-1x "></i> --></span>Registrar</a></li>
+                  <li><a href="<?php echo getUrl("Hobbies","Hobbies","consult"); ?>"><span class="fa-stack fa-lg pull-left"><!-- <i class="fa fa-flag fa-stack-1x "></i> --></span>Consultar</a></li>
                </ul>
             </li>
            <!--  <li>
