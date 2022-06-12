@@ -1,48 +1,29 @@
+
 <div class="mt-5">
     <h3 class="display-4">Consultar Usuario</h3>
+
     <div class="col-md-3 mb-4"> Buscar por nombre <br>
-        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro",false,"ajax");?>">
-    </div>
-    <div class="col-md-3 mb-4"> Buscar por Documento
-        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro2",false,"ajax");?>">
-    </div>
-    <div></div>
-    <label for="">Rol</label>
-            <select name="rol_id" class="form-control">
-            <option value="">Seleccione...</option>
-</div>
+        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro",false,"ajax");?>"> <br>
 
-
-<div class="col-md-4"> 
-        </div>
-
-                
-        <!-- <div class="col-md-4">
-        <form action="ult")?>" method="POST">
-           <label for="">Documento</label>
-            <input type="number" name="usu_docum" class="form-control" placeholder="Documento">   
-
-            <label for="">Rol</label>
+        Buscar por Documento
+        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro2",false,"ajax");?>"> <br>
+   
+        <label for="">Rol</label>
             <select name="rol_id" class="form-control">
             <option value="">Seleccione...</option>
             
 
-           /*  foreach ($roles as $rol) {
+            <?php
+
+            foreach ($roles as $rol) {
                 echo "<option value='".$rol['rol_id']."'>".$rol['rol_nombre']."</option>";
-            } */
+                echo getUrl("Usuario","Usuario","filtro3",false,"ajax");
+            }
             
             ?>
-            </select> 
-          
-            <label for="">Nombre del usuario</label>
-            <input type="text" name="usu_nombre" class="form-control" placeholder="Nombre">
-        </div>
-            <div class="col-md-4 mt-4">
-                <input type="submit" value="Enviar" class="btn btn-success">
-            </div>
-        </form> -->
+ </select>
 
-
+    </div>
 
             
 <div class="mt-5">
