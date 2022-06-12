@@ -11,9 +11,14 @@
         die(print_r($var));
     }
 
-    function getUrl ($modulo, $controlador, $funcion, $parametros=false){
+    function getUrl ($modulo, $controlador, $funcion, $parametros=false, $pagina=false){
+        
+        if ($pagina==false) {
+            $pagina="index";
+        }
+        $url="$pagina.php?modulo=$modulo&controlador=$controlador&funcion=$funcion";
 
-        $url="index.php?modulo=$modulo&controlador=$controlador&funcion=$funcion";
+        
 
         if ($parametros!=false) {
             foreach ($parametros as $key => $value){

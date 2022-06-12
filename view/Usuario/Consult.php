@@ -1,5 +1,15 @@
 <div class="mt-5">
     <h3 class="display-4">Consultar Usuario</h3>
+    <div class="col-md-3 mb-4"> Buscar por nombre <br>
+        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro",false,"ajax");?>">
+    </div>
+    <div class="col-md-3 mb-4"> Buscar por Documento
+        <input type="text" name="buscar" id="buscar" class="form-control" placeholder="Buscar..." data-url="<?php echo getUrl("Usuario","Usuario","filtro2",false,"ajax");?>">
+    </div>
+    <div></div>
+    <label for="">Rol</label>
+            <select name="rol_id" class="form-control">
+            <option value="">Seleccione...</option>
 </div>
 
 
@@ -7,19 +17,19 @@
         </div>
 
                 
-        <div class="col-md-4">
-        <form action="<?=getUrl("usuario","usuario","consult")?>" method="POST">
+        <!-- <div class="col-md-4">
+        <form action="ult")?>" method="POST">
            <label for="">Documento</label>
             <input type="number" name="usu_docum" class="form-control" placeholder="Documento">   
 
             <label for="">Rol</label>
             <select name="rol_id" class="form-control">
             <option value="">Seleccione...</option>
-            <?php
+            
 
-            foreach ($roles as $rol) {
+           /*  foreach ($roles as $rol) {
                 echo "<option value='".$rol['rol_id']."'>".$rol['rol_nombre']."</option>";
-            }
+            } */
             
             ?>
             </select> 
@@ -30,7 +40,7 @@
             <div class="col-md-4 mt-4">
                 <input type="submit" value="Enviar" class="btn btn-success">
             </div>
-        </form>
+        </form> -->
 
 
 

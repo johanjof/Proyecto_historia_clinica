@@ -31,7 +31,7 @@
      
          }
      
-       /*    public function consult(){
+         public function consult(){
              $obj= new UsuarioModel();
      
              $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre,  r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id";
@@ -40,7 +40,7 @@
      
              include_once '../view/Usuario/consult.php';
      
-         } */
+         } 
      
          public function getUpdate(){
              $obj=new UsuarioModel();
@@ -98,7 +98,7 @@
             }
         }
 
-        function consult(){
+        /* function consult(){
             $obj=new UsuarioModel();
             $sql="SELECT * FROM roles";
             $roles=$obj->consult($sql);
@@ -127,14 +127,49 @@
                 }
             
             } else {
-                /* $sql="SELECT * FROM usuarios"; */
+                /* $sql="SELECT * FROM usuarios"; 
 
                 $sql="SELECT u.usu_id,u.usu_docum,u.usu_clave,u.usu_nombre,r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id";
             }
 
             $usuarios=$obj->consult($sql);
             include_once '../view/usuario/consult.php'; 
+        } */
+
+        public function filtro(){
+            $obj = new UsuarioModel();
+
+            $buscar=$_POST['buscar'];
+
+            $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre, r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id AND (u.usu_nombre LIKE '%$buscar%' /* OR u.usu_docum  LIKE '%$buscar% ' */)";
+            $usuarios=$obj->consult($sql);
+
+            include_once '../view/Usuario/filtro.php';
         }
+
+        
+        public function filtro2(){
+            $obj = new UsuarioModel();
+
+            $buscar=$_POST['buscar'];
+
+            $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre, r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id AND (u.usu_docum LIKE '$buscar%' /* OR u.usu_docum  LIKE '%$buscar% ' */)";
+            $usuarios=$obj->consult($sql);
+
+            include_once '../view/Usuario/filtro.php';
+        }      
+        
+        public function filtro3(){
+            $obj = new UsuarioModel();
+
+            $buscar=$_POST['buscar'];
+
+            $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre, r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id AND (r.rol_nombre LIKE '$buscar%' /* OR u.usu_docum  LIKE '%$buscar% ' */)";
+            $usuarios=$obj->consult($sql);
+
+            include_once '../view/Usuario/filtro.php';
+        }
+ 
 
     }
    
