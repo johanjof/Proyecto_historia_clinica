@@ -5,7 +5,7 @@ include_once '../view/partials/head.php';
 
 
 if (isset($_SESSION['Documento'])) {
-  include_once '../view/partials/dashboard.php';
+  include_once '../view/partials/dashboard2.php';
   } else {
   include '../view/login/Login.php';
   }
