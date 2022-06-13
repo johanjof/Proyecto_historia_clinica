@@ -6,7 +6,7 @@
 </div>
   <form action="<?php echo getUrl("Login", "Login", "validar"); ?>" method="POST">
     <div class="user-box">
-      <input type="number"  name="usu_docum" placeholder="Digite su documento">
+      <input type="text"  name="usu_docum" placeholder="Digite su documento">
       <label>Documento</label>
     </div>
     <div class="user-box">
