@@ -1,7 +1,7 @@
 <?php
 
-include_once '../model/MasterModel.php';
+ include_once '../model/MasterModel.php';
 
-class UsuarioModel extends MasterModel{
+ class UsuarioModel extends MasterModel{
     
 }

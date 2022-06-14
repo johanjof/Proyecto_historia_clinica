@@ -55,6 +55,30 @@
             <li><a class="dropdown-item" href="<?php echo getUrl("Genero","Genero","consult"); ?>">Consultar</a></li>
           </ul>
         </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Paciente
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?php echo getUrl("Paciente","Paciente","getInsert"); ?>">Registrar</a></li>
+            <li><a class="dropdown-item" href="<?php echo getUrl("Paciente","Paciente","consult"); ?>">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+           
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Hobbies
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="<?php echo getUrl("Hobbies","Hobbies","getInsert"); ?>">Registrar</a></li>
+            <li><a class="dropdown-item" href="<?php echo getUrl("Hobbies","Hobbies","consult"); ?>">Consultar</a></li>
+            <li><hr class="dropdown-divider"></li>
+           
+          </ul>
+        </li>
         
       </ul>
       <form class="d-flex">

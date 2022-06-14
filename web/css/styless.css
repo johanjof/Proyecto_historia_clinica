@@ -102,6 +102,11 @@ html {
   background-color: #243b55;
   color: #03e9f4;
   }
+
+  #rol_id{
+    background-color: #243b55;
+    color: #03e9f4;
+  }
   
   .login-box a span {
     position: absolute;
