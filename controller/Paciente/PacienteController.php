@@ -20,9 +20,10 @@
             $obj=new PacienteModel();
             
             $pac_nombre=$_POST['pac_nombre'];
+            $hobbies=$_POST['hobbies'];
             $pac_id=$obj->autoincrement("pac_id","paciente");
 
-            $sql="INSERT INTO roles VALUES ($pac_id,'$pac_nombre')";
+            $sql="INSERT INTO roles VALUES ($pac_id,'$pac_nombre','$bbies')";
 
             $ejecutar=$obj->insert($sql);
 

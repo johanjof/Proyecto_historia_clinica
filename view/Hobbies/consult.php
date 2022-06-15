@@ -2,7 +2,7 @@
     <h3 class="display-4">Consultar Hobbies</h3>
 </div>
 <div class="mt-5">
-    <table class="table table-hover table-striped">
+    <table id="lol" class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>

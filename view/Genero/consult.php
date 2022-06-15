@@ -4,7 +4,7 @@
 
 <div class="mt-5">
 
-    <table class="table">
+    <table id="lol" class="table">
 
     <thead>
         <tr>

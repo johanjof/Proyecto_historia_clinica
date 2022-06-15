@@ -21,7 +21,11 @@ html, body {
 body {
   font-size: 100%;
   font-family: "Ubuntu", sans-serif;
-  background-color: #2e2d32;
+  background: linear-gradient(#eaeaea, #3e88ff);
+  color: #506074;
+}
+#lol{
+  color: #000000;
 }
 
 li {
@@ -172,6 +176,7 @@ Main components
   font-weight: bold;
   font-size: 14px;
   font-size: 0.875rem;
+  color: #000000;
 }
 .cd-menu-trigger span {
   /* hamburger icon */
@@ -179,7 +184,7 @@ Main components
   display: inline-block;
   width: 18px;
   height: 2px;
-  background-color: white;
+  background-color: rgb(14, 13, 13);
   vertical-align: middle;
   margin-left: 10px;
   transform: translateY(-2px);
@@ -226,7 +231,7 @@ Main components
   left: 0;
   width: 100%;
   height: 100%;
-  background: #eeecf5;
+  background: #fdfdfd;
   /* Force Hardware Acceleration in WebKit */
   -webkit-transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -262,7 +267,7 @@ Main components
   transform: translateX(-50%) translateY(-50%);
 }
 .no-touch #main-nav li a:hover {
-  background-color: #FFF;
+  background-color: rgb(255, 255, 255);
 }
 #main-nav li:last-child a {
   border-bottom: none;
@@ -284,8 +289,8 @@ Main components
 /* new */
 
 .collapsible {
-  background-color: #f1f1f1;
-  color: white;
+  background:#d2d5da;
+  color: rgb(242, 242, 242);
   cursor: pointer;
   padding: 18px;
   width: 100%;

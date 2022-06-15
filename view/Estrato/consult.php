@@ -1,8 +1,8 @@
 <div class="mt-5">
     <h3 class="display-4">Consultar Estratos</h3>
 </div>
-<div class="mt-5">
-    <table class="table table-striped table-hover">
+<divclass="mt-5">
+    <table id="lol" class="table table-hover">
         <thead>
             <tr>
                 <th>Id</th>
