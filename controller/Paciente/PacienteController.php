@@ -22,7 +22,7 @@
             $pac_nombre=$_POST['pac_nombre'];
             $pac_id=$obj->autoincrement("pac_id","paciente");
 
-            $sql="INSERT INTO roles VALUES ($pac_id,'$pac_nombre')";
+            $sql="INSERT INTO roles VALUES ($pac_id,'$pac_nombre', '$pac_apellido', '$pac_direccion', '$pac_telefono', $gen_id, $estr_id)";
 
             $ejecutar=$obj->insert($sql);
 
