@@ -1,110 +1,81 @@
-<center><div class="mt-5">
-    <h3 class="display-4">Registrar Pacientes</h3>
-</div>
 
-<table style="margin: 80px;">
+<div class="mt-5">
+    <center>
+    <h3 class="display-4">Registrar Paciente</h3>
+
     <div class="mt-5">
-        <form action="<?php echo getUrl("Pacientes","Pacientes","postInsert");?>" method="post">
-            <tr class="col">
-                <td>
-                    <div class="row-md-4">
-                        
-                        <label class="form-label">Documento</label>
-                        <input type="text" name="pac_id" class="form-control" placeholder="Ingrese El documento">
-                    </div>
-                </td>
-            
-                <td>
-                    <div class="row-md-4">
-                        <label class="form-label">Nombre</label>
-                        <input type="text" name="pac_nombre" class="form-control" placeholder="Ingrese El Nombre" >
-                    </div>
-                </td>
 
-                <td>
-                    <div class="row-md-4">
-                        <label class="form-label">Apellido</label>
-                        <input type="text" name="pac_apellido" class="form-control" placeholder="Ingrese El Apellido">
-                    </div>
-                </td>
+        <form action="<?php echo getUrl("Paciente","Paciente","postInsert");?>" method="POST">
+    
+        
+        
+        <table>
+            <tr>
+           <th><font face="Calibri">Documento</font></th> 
+           <th><font face="Calibri">Nombre</font></th>
+           <th><font face="Calibri">Apellido</font></th>
             </tr>
 
-            <tr>
-
-                <td>
-                    <div class="row-md-4">
-                        <label class="form-label">Direccion</label>
-                        <input type="text" name="pac_direccion" class="form-control" placeholder="Ingrese La Direccion">
-                    </div>
-                </td>
-
-                <td>
-                    <div class="row-md-4">
-                        <label class="form-label">Telefono</label>
-                        <input type="text" name="pac_telefono" class="form-control" placeholder="Ingrese El Telefono">
-                    </div>
-                </td>
-
-                <td>
-                    <div class="row-md-4">
-                        <label class="form-label">Correo</label>
-                        <input type="text" name="pac_correo" class="form-control" placeholder="Ingrese El Correo">
-                    </div>
-                </td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="form-check form-check-inline">
-                        <label class="form-label">Hobbies</label><br>
-                    <?php 
-                        foreach ($hobbies as $hob){
-                    ?>
-                        <label><input name="pac_hob_id" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
-                    <?php 
-                        }
-                    ?>
-                    </div>
-                </td>
-
-                <td>
+         <tr>
+            <th>   <input type="text" name="pac_id" class="form-control" placeholder="Documento" required="required"></th>
+            <th>  <input type="text" name="pac_nombre" class="form-control" placeholder="Nombres" required="required"></th>
+            <th> <input type="text" name="pac_apellido" class="form-control" placeholder="Apellidos" required="required"></th>
+            </tr>   
+        </table>
+        <br>
+        <table>
+        <tr>
+            <th><font face="Calibri">Direccion</font></th>
+            <th><font face="Calibri">Telefono</font></th>
+            <th><font face="Calibri">Correo</font></th>
+        </tr>
+        <tr>
+        <th><input type="text" name="pac_direccion" class="form-control" placeholder="Dirección" required="required">
+            </th>
+            <th> <input type="number" name="pac_telefono" class="form-control" placeholder="Teléfono" required="required">
+           </th>
+             <th> <input type="mail" name="pac_correo" class="form-control" placeholder="correo" required="required">
+            </th>
+        </tr>
+    
+      <tr>
+            <td><input type="checkbox" name="hob_nombre" value="1">Ir a cine <br>
+            <input type="checkbox" name="hob_nombre" value="2">Playa <br>
+            <input type="checkbox" name="hob_nombre" value="3">Comida
+        </td>
+        <td>
                     <div class="row-md-4">
                     <center><label class="form-label">genero</label></center>
                             <select name="pac_gen" class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
-                                foreach ($genero as $gen){
+                                foreach ($generos as $gen){
                                     echo "<option value='".$gen['gen_id']."'>".$gen['gen_nombre']."</option>";
                                 }
                             ?>
                             </select>
                     </div>
                 </td>
+          
 
-                <td style="float: right;">
-                    <div class="form-check form-check-inline">
-                        <label class="form-label">Estrato</label><br>
-                            <?php 
-                                foreach ($estrato as $est){
-                            ?>
-                        <label><input name="pac_estra" class="form-check-input" type="radio" id="inlineCheckbox1" value="<?php echo $est['estra_id']; ?>"><?php echo $est['estra_nombre']; ?></label><br>
-                            <?php 
-                                }
-                            ?>
-                    </div>
-                </td>
-                
-            </tr>
-            <tr>
-                <td>
-                    
-                </td>
-            </tr>
-            
+
+         <td>
+                <input type="radio" name="estr_id" value="4"> Estrato 1 <br>
+                <input type="radio" name="estr_id" value="5"> Estrato 2 <br>
+                <input type="radio" name="estr_id" value="6"> Estrato 3
+            </td>
+        </tr>
+        </table> 
+        <br>
+
+        </div>  
         
-        
-        
-    </form>
+
+        <div>
+            <input type="submit" value="Enviar" class="btn btn-success mt-2">
+        </div>
     </div>
-</table>
-</center>
+    
+    </form>
+    </center>
+</div>  

@@ -7,9 +7,18 @@
 
             $obj=new PacienteModel();
 
-            $sql="SELECT * FROM paciente";
+           /*  $sql="SELECT * FROM paciente";
 
-            $paciente=$obj ->consult($sql);
+            $paciente=$obj ->consult($sql); */
+
+            $sql = "SELECT * FROM generos";
+            $generos = $obj-> consult($sql);
+
+            $sql = "SELECT * FROM estratos";
+            $estratos = $obj-> consult($sql);
+            
+            $sql = "SELECT * FROM hobbies";
+            $hobbies = $obj-> consult($sql);
 
             include_once '../view/Paciente/insert.php';
 
@@ -20,10 +29,17 @@
             $obj=new PacienteModel();
             
             $pac_nombre=$_POST['pac_nombre'];
-            $hobbies=$_POST['hobbies'];
-            $pac_id=$obj->autoincrement("pac_id","paciente");
+            $pac_correo=$_POST['pac_correo'];
+            $pac_apellido=$_POST['pac_apellido'];
+            $pac_direccion=$_POST['pac_direccion'];
+            $pac_telefono=$_POST['pac_telefono'];
+            $pac_gen=$_POST['pac_gen'];
+             $estr_id=$_POST['estr_id'];  
+              $hob_nombre=$_POST['hob_nombre'];  
+            $pac_id=$obj->autoincrement("pac_id","paciente"); 
 
-            $sql="INSERT INTO roles VALUES ($pac_id,'$pac_nombre','$bbies')";
+            $sql ="INSERT INTO paciente VALUES ($pac_id,'$pac_nombre','$pac_correo','$pac_direccion','$pac_apellido',$pac_telefono,$pac_gen,$estr_id)";
+            
 
             $ejecutar=$obj->insert($sql);
 
