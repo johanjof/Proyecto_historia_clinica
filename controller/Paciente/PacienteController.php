@@ -27,23 +27,27 @@
         public function postInsert(){
 
             $obj=new PacienteModel();
-            
+            $pac_documento=$_POST['pac_documento'];
             $pac_nombre=$_POST['pac_nombre'];
             $pac_correo=$_POST['pac_correo'];
             $pac_apellido=$_POST['pac_apellido'];
             $pac_direccion=$_POST['pac_direccion'];
             $pac_telefono=$_POST['pac_telefono'];
-            $pac_gen=$_POST['pac_gen'];
-             $estr_id=$_POST['estr_id'];  
-              $hob_nombre=$_POST['hob_nombre'];  
-            $pac_id=$obj->autoincrement("pac_id","paciente"); 
-
-            $sql ="INSERT INTO paciente VALUES ($pac_id,'$pac_nombre','$pac_correo','$pac_direccion','$pac_apellido',$pac_telefono,$pac_gen,$estr_id)";
+            $gen_id=$_POST['gen_id'];
+            $pac_id=$obj->autoincrement("pac_id","paciente");
+            $estr_id=$_POST['estr_id'];
             
 
+            $sql ="INSERT INTO paciente VALUES ($pac_id,'$pac_nombre',$pac_documento,'$pac_correo','$pac_apellido','$pac_direccion',$pac_telefono,$gen_id,$estr_id)";
             $ejecutar=$obj->insert($sql);
 
             if($ejecutar){
+                $hobbies=$_POST['hobbie'];
+                foreach ($hobbies as $hob){
+                    $id2=$obj->autoincrement("pac_hob_id", "paciente_hobbies");
+                    $sql2="INSERT INTO paciente_hobbies VALUES ($id2,$pac_id,$hob)";
+                    $ci=$obj->insert($sql2);
+                }
 
                echo redirect(getUrl("Paciente","Paciente","getInsert"));
 
@@ -51,7 +55,7 @@
 
                 echo "Uy, hubo un error";
 
-            }
+            } 
 
         }
 

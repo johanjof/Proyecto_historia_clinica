@@ -17,7 +17,7 @@
             </tr>
 
          <tr>
-            <th>   <input type="text" name="pac_id" class="form-control" placeholder="Documento" required="required"></th>
+            <th>   <input type="text" name="pac_documento" class="form-control" placeholder="Documento" required="required"></th>
             <th>  <input type="text" name="pac_nombre" class="form-control" placeholder="Nombres" required="required"></th>
             <th> <input type="text" name="pac_apellido" class="form-control" placeholder="Apellidos" required="required"></th>
             </tr>   
@@ -39,14 +39,14 @@
         </tr>
     
       <tr>
-            <td><input type="checkbox" name="hob_nombre" value="1">Ir a cine <br>
-            <input type="checkbox" name="hob_nombre" value="2">Playa <br>
-            <input type="checkbox" name="hob_nombre" value="3">Comida
+            <td><?php foreach($hobbies as $hob){?>
+                <label><input type="checkbox" name="hobbie[]" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
+                <?php } ?>
         </td>
         <td>
                     <div class="row-md-4">
                     <center><label class="form-label">genero</label></center>
-                            <select name="pac_gen" class="form-control" required="required">
+                            <select name="gen_id" class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
                                 foreach ($generos as $gen){
@@ -60,9 +60,9 @@
 
 
          <td>
-                <input type="radio" name="estr_id" value="4"> Estrato 1 <br>
-                <input type="radio" name="estr_id" value="5"> Estrato 2 <br>
-                <input type="radio" name="estr_id" value="6"> Estrato 3
+         <?php foreach($estratos as $estr){?>
+                <label><input type="radio" name="estr_id" value="<?php echo $estr['estr_id']; ?>"><?php echo $estr['estr_nombre']; ?></label><br>
+                <?php } ?>
             </td>
         </tr>
         </table> 
