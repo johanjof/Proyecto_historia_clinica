@@ -16,9 +16,9 @@
             </tr>
 
          <tr>
-            <th>   <input type="text" name="pac_documento" class="form-control" placeholder="Documento" value="<?php echo $pac['pac_documento'];?>"></th>
-            <th>  <input type="text" name="pac_nombre" class="form-control" placeholder="Nombres" value="<?php echo $pac['pac_nombre'];?>" ></th>
-            <th> <input type="text" name="pac_apellido" class="form-control" placeholder="Apellidos" value="<?php echo $pac['pac_apellido'];?>"></th>
+            <th>   <input type="text" readonly name="pac_documento" class="form-control" placeholder="Documento" readonly value="<?php echo $pac['pac_documento'];?>"></th>
+            <th>  <input type="text" readonly name="pac_nombre" class="form-control" placeholder="Nombres" value="<?php echo $pac['pac_nombre'];?>" ></th>
+            <th> <input type="text" readonly name="pac_apellido" class="form-control" placeholder="Apellidos" value="<?php echo $pac['pac_apellido'];?>"></th>
             </tr>   
         </table>
 
@@ -29,19 +29,43 @@
             <th><font face="Calibri">Correo</font></th>
         </tr>
         <tr>
-        <th><input type="text" name="pac_direccion" class="form-control" placeholder="Dirección" value="<?php echo $pac['pac_direccion'];?>">
+        <th><input type="text" readonly name="pac_direccion" class="form-control" placeholder="Dirección" value="<?php echo $pac['pac_direccion'];?>">
             </th>
-            <th> <input type="number" name="pac_telefono" class="form-control" placeholder="Teléfono" required="required" value="<?php echo $pac['pac_telefono'];?>">
+            <th> <input type="number" readonly name="pac_telefono" class="form-control" placeholder="Teléfono" required="required" value="<?php echo $pac['pac_telefono'];?>">
            </th>
-             <th> <input type="mail" name="pac_correo" class="form-control" placeholder="correo" required="required" value="<?php echo $pac['pac_correo'];?>">
+             <th> <input type="mail" readonly name="pac_correo" class="form-control" placeholder="correo" required="required" value="<?php echo $pac['pac_correo'];?>">
             </th>
         </tr>
 
         <tr>
-            <td><?php foreach($hobbies as $hob){?>
-                <label><input type="checkbox" name="hobbies" value="<?php echo $hob['hob_nombre']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
-                <?php } ?>
-        </td>
+            <td> <?php foreach($paciente_hob as $ph){?>
+
+                <label>
+
+                <?php
+                        if ($ph['pac_id']==$pac['pac_id']) {
+                        $check="checked";
+                            }else{
+                                $check="";
+                            }
+                           
+                       
+                    ?>
+                   <input type="checkbox" <?php echo $check ?> name="hobbies" value="<?php echo $ph['hob_nombre']; ?>">
+
+
+                    <?php
+                        echo $ph['hob_nombre']."<br>"; 
+                        }
+                    ?>
+                
+
+                    
+
+
+                </label><br> 
+
+        </td> 
 
         <td>
                     <div class="row-md-4">
@@ -50,8 +74,15 @@
                                 <option value="">Seleccione....</option>
                             <?php
                                 foreach ($generos as $gen){
-                                    echo "<option value='".$gen['gen_id']."'>".$gen['gen_nombre']."</option>";
+                                    if ($gen['gen_id']==$pac['gen_id']) {
+                                        $select="selected";
+                                    }else{
+                                        $select="";
+                                    }
+                                    echo "<option value='".$gen['gen_id']."'$select>".$gen['gen_nombre']."</option>";
                                 }
+                                    
+                                
                             ?>
                             </select>
                     </div>
@@ -59,8 +90,27 @@
 
                 <td>
          <?php foreach($estratos as $estr){?>
-                <label><input type="radio" name="estr_id" value="<?php echo $estr['estr_id']; ?>"><?php echo $estr['estr_nombre']; ?></label><br>
-                <?php } ?>
+                <label>
+
+                 <?php
+                        if ($estr['estr_id']==$pac['estr_id']) {
+                        $check="checked";
+                            }else{
+                                $check="";
+                            }
+                           
+                       
+                    ?>
+                    <input type="radio" <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
+
+                    <?php
+                        echo $estr['estr_nombre']."<br>"; 
+                        }
+                    ?>
+                
+                   
+                </label><br>
+               
             </td>
         </tr>
      

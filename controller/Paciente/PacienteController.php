@@ -112,12 +112,21 @@
             $obj=new PacienteModel();
 
             $pac_id=$_GET['pac_id'];
-            $sql="SELECT * FROM paciente WHERE pac_id=$pac_id";
+            $sql="SELECT * FROM paciente WHERE pac_id=$pac_id"; 
+           /*  $sql="SELECT * FROM paciente as p, paciente_hobbies as ph WHERE p.pac_id=$pac_id and ph.pac_id=p.pac_id"; */
             $paciente=$obj->consult($sql);
 
            /*  $hob_id=$_GET['hob_id'];
             $sql="SELECT * FROM hobbies WHERE hob_id=$hob_id";
             $hobbies=$obj->consult($sql); */
+
+
+            $sql="SELECT pac_id, hob.hob_id,hob.hob_nombre
+            FROM hobbies hob
+                inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id
+            WHERE pac_id = $pac_id";
+
+            $paciente_hob = $obj -> consult($sql);
 
             $sql = "SELECT * FROM generos";
             $generos = $obj-> consult($sql);
