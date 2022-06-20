@@ -7,6 +7,7 @@
     <?php
         foreach($paciente as $pac){
     ?>
+    <form action="<?php echo getUrl("Paciente","Paciente","postDelete");?>" method="POST">
 <center>
 <table>
             <tr>
@@ -16,6 +17,7 @@
             </tr>
 
          <tr>
+            <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
             <th>   <input type="text" readonly name="pac_documento" class="form-control" placeholder="Documento" readonly value="<?php echo $pac['pac_documento'];?>"></th>
             <th>  <input type="text" readonly name="pac_nombre" class="form-control" placeholder="Nombres" value="<?php echo $pac['pac_nombre'];?>" ></th>
             <th> <input type="text" readonly name="pac_apellido" class="form-control" placeholder="Apellidos" value="<?php echo $pac['pac_apellido'];?>"></th>
@@ -51,7 +53,7 @@
                            
                        
                     ?>
-                   <input type="checkbox" <?php echo $check ?> name="hobbies" value="<?php echo $ph['hob_nombre']; ?>">
+                   <input type="checkbox" <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre']; ?>">
 
 
                     <?php

@@ -85,6 +85,22 @@
             $sql="SELECT * FROM paciente WHERE pac_id=$pac_id";
             $paciente=$obj->consult($sql);
 
+            $sql="SELECT pac_id, hob.hob_id,hob.hob_nombre
+            FROM hobbies hob
+                inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id
+            WHERE pac_id = $pac_id";
+
+            $paciente_hob = $obj -> consult($sql);
+
+            $sql = "SELECT * FROM generos";
+            $generos = $obj-> consult($sql);
+
+            $sql = "SELECT * FROM estratos";
+            $estratos = $obj-> consult($sql);
+            
+            $sql = "SELECT * FROM hobbies";
+            $hobbies = $obj-> consult($sql);
+
             include_once "../view/Paciente/update.php";
         }
 
@@ -143,17 +159,9 @@
             $obj=new PacienteModel();
 
             $pac_id=$_POST['pac_id'];
+            $sql="DELETE FROM paciente_hobbies WHERE pac_id=$pac_id";
+            $obj->delete($sql);
             $sql="DELETE FROM paciente WHERE pac_id=$pac_id";
-
-            $hob_id=$_POST['hob_id'];
-            $sql="DELETE FROM hobbies WHERE hob_id=$hob_id";
-
-            $gen_id=$_POST['gen_id'];
-            $sql="DELETE FROM generos WHERE gen_id=$gen_id";
-
-            $estr_id=$_POST['estr_id'];
-            $sql="DELETE FROM estratos WHERE estr_id=$estr_id";
-
             $ejecutar=$obj->delete($sql);
             if ($ejecutar) {
                 redirect(getUrl("Paciente","Paciente","consult"));
