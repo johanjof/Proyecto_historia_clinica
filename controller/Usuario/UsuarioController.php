@@ -77,7 +77,7 @@
             $obj=new UsuarioModel();
 
             $usu_id=$_GET['usu_id'];
-            $sql="SELECT * FROM usuarios WHERE usu_id=$usu_id";
+            /* $sql="SELECT * FROM usuarios WHERE usu_id=$usu_id"; */
             $sql="SELECT u.*, r.rol_nombre FROM usuarios AS u, roles AS r WHERE u.rol_id=r.rol_id
             AND usu_id=$usu_id";
             $usuario=$obj->consult($sql);

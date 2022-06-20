@@ -114,6 +114,19 @@
             $pac_id=$_GET['pac_id'];
             $sql="SELECT * FROM paciente WHERE pac_id=$pac_id";
             $paciente=$obj->consult($sql);
+
+           /*  $hob_id=$_GET['hob_id'];
+            $sql="SELECT * FROM hobbies WHERE hob_id=$hob_id";
+            $hobbies=$obj->consult($sql); */
+
+            $sql = "SELECT * FROM generos";
+            $generos = $obj-> consult($sql);
+
+            $sql = "SELECT * FROM estratos";
+            $estratos = $obj-> consult($sql);
+            
+            $sql = "SELECT * FROM hobbies";
+            $hobbies = $obj-> consult($sql);
             include_once '../view/Paciente/delete.php'; 
         }
 
@@ -122,6 +135,15 @@
 
             $pac_id=$_POST['pac_id'];
             $sql="DELETE FROM paciente WHERE pac_id=$pac_id";
+
+            $hob_id=$_POST['hob_id'];
+            $sql="DELETE FROM hobbies WHERE hob_id=$hob_id";
+
+            $gen_id=$_POST['gen_id'];
+            $sql="DELETE FROM generos WHERE gen_id=$gen_id";
+
+            $estr_id=$_POST['estr_id'];
+            $sql="DELETE FROM estratos WHERE estr_id=$estr_id";
 
             $ejecutar=$obj->delete($sql);
             if ($ejecutar) {
