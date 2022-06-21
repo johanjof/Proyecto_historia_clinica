@@ -85,10 +85,15 @@
             $sql="SELECT * FROM paciente WHERE pac_id=$pac_id";
             $paciente=$obj->consult($sql);
 
-            $sql="SELECT pac_id, hob.hob_id,hob.hob_nombre
-            FROM hobbies hob
-                inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id
-            WHERE pac_id = $pac_id";
+            $sql="select DISTINCT(hobs.hob_id), hobs.hob_nombre,
+                    IF(tmp.hob_nombre IS NULL,' ','checked') as chulo
+                from hobbies hobs 
+                left join (SELECT pac_id, hob.hob_id,hob.hob_nombre 
+                            FROM hobbies hob 
+                            inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id 
+                            WHERE hob_rel.pac_id = $pac_id) tmp on tmp.pac_id = $pac_id and tmp.hob_id = hobs.hob_id 
+                group by hobs.hob_nombre
+                order by hobs.hob_id= $pac_id";
 
             $paciente_hob = $obj -> consult($sql);
 
@@ -109,12 +114,21 @@
             $obj =new PacienteModel();
 
             $pac_id=$_POST['pac_id'];
-
+            $pac_documento=$_POST['pac_documento'];
             $pac_nombre=$_POST['pac_nombre'];
-
-            $sql="UPDATE paciente SET pac_nombre='$pac_nombre' WHERE pac_id=$pac_id";
+            $pac_correo=$_POST['pac_correo'];
+            $pac_apellido=$_POST['pac_apellido'];
+            $pac_direccion=$_POST['pac_direccion'];
+            $pac_telefono=$_POST['pac_telefono'];
+            $gen_id=$_POST['gen_id'];
+            $pac_id=$obj->autoincrement("pac_id","paciente");
+            $estr_id=$_POST['estr_id'];
+         
+            $sql = "UPDATE paciente SET pac_nombre= '$pac_nombre',pac_documento= '$pac_documento',pac_correo= '$pac_correo',pac_apellido='$pac_apellido',pac_direccion='$pac_direccion',pac_telefono= '$pac_telefono',gen_id= $gen_id,
+             estr_id= $estr_id WHERE pac_id= $pac_id";
+            /* $sql="UPDATE paciente SET pac_nombre='$pac_nombre' WHERE pac_id=$pac_id";
+            $ejecutar=$obj->update($sql); */
             $ejecutar=$obj->update($sql);
-
             if ($ejecutar) {
 
             echo redirect(getUrl("Paciente","Paciente","consult"));

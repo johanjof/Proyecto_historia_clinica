@@ -44,27 +44,14 @@
 
                 <label>
 
-                <?php
-                        if ($ph['pac_id']==$pac['pac_id']) {
-                        $check="checked";
-                            }else{
-                                $check="";
-                            }
-                           
-                       
+                    <?php
+                        $check=$ph['chulo'];
                     ?>
                    <input type="checkbox" <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre']; ?>">
-
-
                     <?php
                         echo $ph['hob_nombre']."<br>"; 
                         }
                     ?>
-                
-
-                    
-
-
                 </label><br> 
 
         </td> 

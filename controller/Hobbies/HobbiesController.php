@@ -22,7 +22,7 @@
             $hob_nombre=$_POST['hob_nombre'];
             $hob_id=$obj->autoincrement("hob_id","hobbies");
 
-            $sql="INSERT INTO roles VALUES ($hob_id,'$hob_nombre')";
+            $sql="INSERT INTO hobbies VALUES ($hob_id,'$hob_nombre')";
 
             $ejecutar=$obj->insert($sql);
 
