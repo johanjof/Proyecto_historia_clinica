@@ -1,32 +1,135 @@
 <div class="mt-5">
-    <h3 class="display-4">Consultar Paciente</h3>
+    <center>
+    <h3 class="display-4">Detalle Paciente</h3>
 </div>
+
 <div class="mt-5">
-    <table class="table table-hover table-striped">
-        <thead>
+    <?php
+        foreach($paciente as $pac){
+    ?>
+    
+<center>
+<table>
             <tr>
-                <th>Documento</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Direccion</th>
-                <th>Tel</th>
-                <th>Genero</th>
-                <th>Estrato</th>
+           <th><font face="Calibri">Documento</font></th> 
+           <th><font face="Calibri">Nombre</font></th>
+           <th><font face="Calibri">Apellido</font></th>
             </tr>
-        </thead>
-        <tbody>
-            <?php
-                foreach ($paciente as $pac ) {
-                    echo "<tr>";
-                    echo "<td>".$pac['pac_id']."</td>";
-                    echo "<td>".$pac['pac_nombre']."</td>";
-                    echo "<td>".$pac['pac_apellido']."</td>";
-                    echo "<td>".$pac['pac_direccion']."</td>";
-                    echo "<td>".$pac['pac_telefono']."</td>";
-                    echo "<td>".$pac['gen_id']."</td>";
-                    echo "<td>".$pac['estr_id']."</td>";
-                }
-            ?>
-        </tbody>
-    </table>
+
+         <tr>
+            <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
+            <th>   <input type="text" readonly name="pac_documento" class="form-control" readonly value="<?php echo $pac['pac_documento'];?>"></th>
+            <th>  <input type="text" readonly name="pac_nombre" class="form-control" value="<?php echo $pac['pac_nombre'];?>" ></th>
+            <th> <input type="text" readonly name="pac_apellido" class="form-control" value="<?php echo $pac['pac_apellido'];?>"></th>
+            </tr>   
+        </table>
+
+        <table>
+        <tr>
+            <th><font face="Calibri">Direccion</font></th>
+            <th><font face="Calibri">Telefono</font></th>
+            <th><font face="Calibri">Correo</font></th>
+        </tr>
+        <tr>
+        <th><input type="text" readonly name="pac_direccion" class="form-control" value="<?php echo $pac['pac_direccion'];?>">
+            </th>
+            <th> <input type="number" readonly name="pac_telefono" class="form-control" required="required" value="<?php echo $pac['pac_telefono'];?>">
+           </th>
+             <th> <input type="mail" readonly name="pac_correo" class="form-control" required="required" value="<?php echo $pac['pac_correo'];?>">
+            </th>
+        </tr>
+
+        <tr>
+            <td> <?php foreach($paciente_hob as $ph){?>
+
+                <label>
+
+                <?php
+                        if ($ph['pac_id']==$pac['pac_id']) {
+                        $check="checked";
+                            }else{
+                                $check="";
+                            }
+                           
+                       
+                    ?>
+                   <input type="checkbox" disabled <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre']; ?>">
+
+
+                    <?php
+                        echo $ph['hob_nombre']."<br>"; 
+                        }
+                    ?>
+                
+
+                    
+
+
+                </label><br> 
+
+        </td> 
+
+        <td>
+                    <div class="row-md-4">
+                    <center><label class="form-label">genero</label></center>
+                            <select name="gen_id" disabled class="form-control" required="required">
+                                <option value="">Seleccione....</option>
+                            <?php
+                                foreach ($generos as $gen){
+                                    if ($gen['gen_id']==$pac['gen_id']) {
+                                        $select="selected";
+                                    }else{
+                                        $select="";
+                                    }
+                                    echo "<option value='".$gen['gen_id']."'$select>".$gen['gen_nombre']."</option>";
+                                }
+                                    
+                                
+                            ?>
+                            </select>
+                    </div>
+                </td>
+
+                <td>
+         <?php foreach($estratos as $estr){?>
+                <label>
+
+                 <?php
+                        if ($estr['estr_id']==$pac['estr_id']) {
+                        $check="checked";
+                            }else{
+                                $check="";
+                            }
+                           
+                       
+                    ?>
+                    <input type="radio" disabled <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
+
+                    <?php
+                        echo $estr['estr_nombre']."<br>"; 
+                        }
+                    ?>
+                
+                   
+                </label><br>
+               
+            </td>
+        </tr>
+     
+        
+
+        
+        </table>
+
+<div class="col-md-4 mt-4">
+<a href="<?php echo getUrl("Paciente","Paciente","consult"); ?>"><button class="btn btn-info">Volver</button></a>
 </div>
+
+    </div>
+
+    <?php
+        }
+    ?>
+</div>
+
+</center>

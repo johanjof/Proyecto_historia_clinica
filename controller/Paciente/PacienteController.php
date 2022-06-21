@@ -71,8 +71,26 @@
         public function verDetalle(){
             $obj= new PacienteModel();
 
-            $sql="SELECT * FROM paciente";
+            $pac_id=$_GET['pac_id'];
+            $sql="SELECT * FROM paciente WHERE pac_id=$pac_id"; 
+           
             $paciente=$obj->consult($sql);
+
+            $sql="SELECT pac_id, hob.hob_id,hob.hob_nombre
+            FROM hobbies hob
+                inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id
+            WHERE pac_id = $pac_id";
+
+            $paciente_hob = $obj -> consult($sql);
+
+            $sql = "SELECT * FROM generos";
+            $generos = $obj-> consult($sql);
+
+            $sql = "SELECT * FROM estratos";
+            $estratos = $obj-> consult($sql);
+            
+            $sql = "SELECT * FROM hobbies";
+            $hobbies = $obj-> consult($sql);
 
             include_once '../view/paciente/verDetalle.php';
         }
@@ -121,7 +139,7 @@
             $pac_direccion=$_POST['pac_direccion'];
             $pac_telefono=$_POST['pac_telefono'];
             $gen_id=$_POST['gen_id'];
-            $pac_id=$obj->autoincrement("pac_id","paciente");
+            //$pac_id=$obj->autoincrement("pac_id","paciente");
             $estr_id=$_POST['estr_id'];
          
             $sql = "UPDATE paciente SET pac_nombre= '$pac_nombre',pac_documento= '$pac_documento',pac_correo= '$pac_correo',pac_apellido='$pac_apellido',pac_direccion='$pac_direccion',pac_telefono= '$pac_telefono',gen_id= $gen_id,
