@@ -28,7 +28,7 @@
 
             if($ejecutar){
 
-               echo redirect(getUrl("Hobbies","Hobbies","getInsert"));
+               echo redirect(getUrl("Hobbies","Hobbies","consult"));
 
             }else{
 
