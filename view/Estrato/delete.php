@@ -1,5 +1,5 @@
 <div class="mt-5">
-    <h3 class="display-4">Seguro que quieres eliminar este Estrato</h3>
+    <h3 class="display-4">¿Quieres eliminar este registro?</h3>
 </div>
 <div class="mt-5">
     <?php

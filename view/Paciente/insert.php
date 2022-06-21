@@ -39,13 +39,18 @@
         </tr>
     
       <tr>
-            <td><?php foreach($hobbies as $hob){?>
+          
+            <td>
+            <label class="form-label"><b>Hobbies</b></label><br>    
+            <?php foreach($hobbies as $hob){?>
+            
+
                 <label><input type="checkbox" name="hobbie[]" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
                 <?php } ?>
         </td>
         <td>
                     <div class="row-md-4">
-                    <center><label class="form-label">genero</label></center>
+                    <center><label class="form-label"><b>Generos</b></label></center>
                             <select name="gen_id" class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
@@ -56,11 +61,12 @@
                             </select>
                     </div>
                 </td>
-          
+        
 
-
-         <td>
+         <td> 
+             <br> <label class="form-label"><b>Estratos</b></label><br>
          <?php foreach($estratos as $estr){?>
+         
                 <label><input type="radio" name="estr_id" value="<?php echo $estr['estr_id']; ?>"><?php echo $estr['estr_nombre']; ?></label><br>
                 <?php } ?>
             </td>

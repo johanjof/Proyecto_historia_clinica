@@ -1,6 +1,7 @@
 <div class="mt-5">
     <center>
-    <h3 class="display-4">Eliminar Paciente</h3>
+    <h3 class="display-4">¿Quieres eliminar este registro?</h3>
+
 </div>
 
 <div class="mt-5">
@@ -40,7 +41,10 @@
         </tr>
 
         <tr>
-            <td> <?php foreach($paciente_hob as $ph){?>
+            <td>
+            <label class="form-label"><b>Hobbies</b></label><br>
+                
+            <?php foreach($paciente_hob as $ph){?>
 
                 <label>
 
@@ -53,7 +57,7 @@
                            
                        
                     ?>
-                   <input type="checkbox" <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre']; ?>">
+                   <input disabled type="checkbox" <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre'] ; ?>">
 
 
                     <?php
@@ -71,8 +75,8 @@
 
         <td>
                     <div class="row-md-4">
-                    <center><label class="form-label">genero</label></center>
-                            <select name="gen_id" class="form-control" required="required">
+                    <center><label class="form-label"><b>Generos</b></label></center>
+                            <select disabled name="gen_id" class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
                                 foreach ($generos as $gen){
@@ -91,6 +95,8 @@
                 </td>
 
                 <td>
+            <br>  <label class="form-label"><b>Estratos</b></label><br>
+
          <?php foreach($estratos as $estr){?>
                 <label>
 
@@ -103,7 +109,7 @@
                            
                        
                     ?>
-                    <input type="radio" <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
+                    <input disabled type="radio" <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
 
                     <?php
                         echo $estr['estr_nombre']."<br>"; 
@@ -123,6 +129,8 @@
 
 <div class="col-md-4 mt-4">
     <input type="submit" value="Aceptar" class="btn btn-success">
+    <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Paciente","Paciente","consult");?>"> <br>
+
 </div>
 
     </div>

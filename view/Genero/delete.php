@@ -1,7 +1,8 @@
 
 
 <div class="mt-5">
-    <h3 class="display-4">Eliminar genero</h3>
+<h3 class="display-4">¿Quieres eliminar este registro?</h3>
+  
 </div>
 
 <div class="mt-5">
@@ -23,6 +24,8 @@
             </div>
             <div class="col-md-4 mt-4">
                 <input type="submit" value="Enviar" class="btn btn-success mt-2">
+                <input type="submit" value="Cancelar" class="btn btn-danger mt-2" formaction="<?php echo getUrl("Genero","Genero","consult");?>">
+
             </div>
 
 

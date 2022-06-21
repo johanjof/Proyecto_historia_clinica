@@ -1,4 +1,4 @@
-<h3 class="display-4 mt-4">Eliminar Usuario</h3>
+<h3 class="display-4">¿Quieres eliminar este registro?</h3>
 <?php
     while ($usu=mysqli_fetch_assoc($usuario)) {
 ?>
@@ -23,6 +23,8 @@
             </div>
             <div class="col-md-4 mt-5">
                <input type="submit" value="Aceptar" class="btn btn-success"> 
+             <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Usuario","Usuario","consult");?>">
+
             </div>
         </div>
     </form>

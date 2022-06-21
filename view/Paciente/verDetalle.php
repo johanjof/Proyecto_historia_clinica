@@ -40,7 +40,10 @@
         </tr>
 
         <tr>
-            <td> <?php foreach($paciente_hob as $ph){?>
+            <td> 
+              <label class="form-label"><b>Hobbies</b></label><br>
+
+                <?php foreach($paciente_hob as $ph){?>
 
                 <label>
 
@@ -71,7 +74,7 @@
 
         <td>
                     <div class="row-md-4">
-                    <center><label class="form-label">genero</label></center>
+                    <center><label class="form-label"><b>Generos</b></label></center>
                             <select name="gen_id" disabled class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
@@ -91,6 +94,8 @@
                 </td>
 
                 <td>
+             <br> <label class="form-label"><b>Estratos</b></label><br>
+
          <?php foreach($estratos as $estr){?>
                 <label>
 
