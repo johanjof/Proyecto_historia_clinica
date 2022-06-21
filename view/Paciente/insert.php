@@ -43,8 +43,6 @@
             <td>
             <label class="form-label"><b>Hobbies</b></label><br>    
             <?php foreach($hobbies as $hob){?>
-            
-
                 <label><input type="checkbox" name="hobbie[]" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
                 <?php } ?>
         </td>

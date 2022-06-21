@@ -41,7 +41,6 @@
 
         <tr>
             <td>
-            <label class="form-label"><b>Hobbies</b></label><br>
                 
             <?php foreach($paciente_hob as $ph){?>
 
@@ -50,18 +49,15 @@
                     <?php
                         $check=$ph['chulo'];
                     ?>
-                   <input type="checkbox" <?php echo $check ?> name="hob_id" value="<?php echo $ph['hob_nombre']; ?>">
-                    <?php
-                        echo $ph['hob_nombre']."<br>"; 
+                   <input type="checkbox" <?php echo $check ?> name="hobbie[]" value="<?php echo $ph['hob_id']; ?>"><?php echo $ph['hob_nombre']."<br>"; 
                         }
-                    ?>
+                    ?> 
                 </label><br> 
-
         </td> 
 
         <td>
                     <div class="row-md-4">
-                    <center><label class="form-label"><b>Generos</b></label></center>
+                    <center><label class="form-label"><b>Genero</b></label></center>
                             <select name="gen_id" class="form-control" required="required">
                                 <option value="">Seleccione....</option>
                             <?php
@@ -81,7 +77,7 @@
                 </td>
 
                 <td>
-            <br>  <label class="form-label"><b>Estratos</b></label><br>
+              <label class="form-label"><b>Estratos</b></label><br>
 
          <?php foreach($estratos as $estr){?>
                 <label>

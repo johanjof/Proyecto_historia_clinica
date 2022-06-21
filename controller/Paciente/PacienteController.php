@@ -111,7 +111,7 @@
                             inner join paciente_hobbies hob_rel on hob_rel.hob_id = hob.hob_id 
                             WHERE hob_rel.pac_id = $pac_id) tmp on tmp.pac_id = $pac_id and tmp.hob_id = hobs.hob_id 
                 group by hobs.hob_nombre
-                order by hobs.hob_id= $pac_id";
+                order by hobs.hob_id asc";
 
             $paciente_hob = $obj -> consult($sql);
 
@@ -147,7 +147,26 @@
             /* $sql="UPDATE paciente SET pac_nombre='$pac_nombre' WHERE pac_id=$pac_id";
             $ejecutar=$obj->update($sql); */
             $ejecutar=$obj->update($sql);
+
             if ($ejecutar) {
+
+
+
+
+
+              
+                $pac_id=$_POST['pac_id'];
+                $sql="DELETE FROM paciente_hobbies WHERE pac_id=$pac_id";
+                $obj->delete($sql);  
+
+               
+                $hobbies=$_POST['hobbie'];
+                foreach ($hobbies as $hob){
+                    $id2=$obj->autoincrement("pac_hob_id", "paciente_hobbies");
+                    $sql2="INSERT INTO paciente_hobbies VALUES ($id2,$pac_id,$hob)";
+                    $ci=$obj->insert($sql2);
+                }
+
 
             echo redirect(getUrl("Paciente","Paciente","consult"));
 
