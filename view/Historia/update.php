@@ -41,8 +41,7 @@
 
         <tr>
             <td>
-
-            <label class="form-label"><b>Hobbies</b></label><br> 
+                
             <?php foreach($paciente_hob as $ph){?>
 
                 <label>
