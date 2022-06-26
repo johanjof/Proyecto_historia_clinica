@@ -1,15 +1,15 @@
 <div class="mt-5">
     <center>
-    <h3 class="display-4">Registrar historia medica</h3>
+    <h3 class="display-4">Historia Clinica</h3>
 </div>
 
 <div class="mt-5">
     <?php
         foreach($paciente as $pac){
     ?>
-    
+    <hr>
 <center>
-<table>
+<table table style="border: hidden">
             <tr>
            <th><font face="Calibri">Documento</font></th> 
            <th><font face="Calibri">Nombre</font></th>
@@ -18,40 +18,81 @@
 
          <tr>
             <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
-            <th>   <input type="text" readonly name="pac_documento" class="form-control" readonly value="<?php echo $pac['pac_documento'];?>"></th>
-            <th>  <input type="text" readonly name="pac_nombre" class="form-control" value="<?php echo $pac['pac_nombre'];?>" ></th>
-            <th> <input type="text" readonly name="pac_apellido" class="form-control" value="<?php echo $pac['pac_apellido'];?>"></th>
+            <th><?php echo $pac['pac_documento'];?></th>
+            <th><?php echo $pac['pac_nombre'];?></th>
+            <th><?php echo $pac['pac_apellido'];?></th>
             </tr>   
         </table>
 
-        <table>
+        <table table style="border: hidden">
         <tr>
-            <th><font face="Calibri">Direccion</font></th>
-            <th><font face="Calibri">Telefono</font></th>
-            <th><font face="Calibri">Correo</font></th>
+            <th><font face="Calibri">Telefono:</font></th>
+            <th><font face="Calibri">Genero:</font></th>
+            <th><font face="Calibri">Estrato:</font></th>
         </tr>
         <tr>
-        <th><input type="text" readonly name="pac_direccion" class="form-control" value="<?php echo $pac['pac_direccion'];?>">
+        <th><?php echo $pac['pac_telefono'];?>
             </th>
-            <th> <input type="number" readonly name="pac_telefono" class="form-control" required="required" value="<?php echo $pac['pac_telefono'];?>">
-           </th>
-             <th> <input type="mail" readonly name="pac_correo" class="form-control" required="required" value="<?php echo $pac['pac_correo'];?>">
-            </th>
+            <td>
+                    <div class="row-md-4">
+                   
+                           
+                               
+                            <?php
+                                foreach ($generos as $gen){
+                                    if ($gen['gen_id']==$pac['gen_id']) {
+                                        echo $gen['gen_nombre'];
+                                    }
+                                  
+                                    
+                                }
+                                    
+                                
+                            ?>
+                          
+                    </div>
+                </td>
+                <th> <div class="row-md-4">
+                  
+                  
+                     
+                  <?php
+                      foreach ($estratos as $str){
+                          if ($str['estr_id']==$pac['estr_id']) {
+                            echo $str['estr_nombre'];
+                         
+                          }
+                          
+                      }
+                          
+                      
+                  ?>
+                  </select>
+          </div>
+                  </th>
+              
+  </tr>   
+</table>
+
+           
+            
         </tr>
         </table>
+        
 
         <?php
         }
          ?>
 </div>
+<hr>
 <center>
 <div class="mt-3">
     <form action="<?php echo getUrl("Historia","Historia","postInsert",array("pac_id"=>$pac['pac_id']));?>" method="post">
     <table>
         <tr>
             <th><font face="Calibri">Motivo de visita </font></th>
-            <th><font face="Calibri">Esfera ojo derecho</font></th>
-            <th><font face="Calibri">Circunferencia ojo derecho</font></th>
+            <th><font face="Calibri">Esfera OD </font></th>
+            <th><font face="Calibri">Cilindro OD</font></th>
         </tr>
         <tr>
         <th><input type="text" name="hist_motv" class="form-control" placeholder="Motivo  de visita " required="required">
@@ -64,9 +105,9 @@
         </table>
         <table>
         <tr>
-            <th><font face="Calibri">Eje ojo derecho</font></th>
-            <th><font face="Calibri">Esfera ojo ziquierdo</font></th>
-            <th><font face="Calibri">Circunferencia ojo izquierdo</font></th>
+            <th><font face="Calibri">Eje OD</font></th>
+            <th><font face="Calibri">Esfera OI</font></th>
+            <th><font face="Calibri">Cilindro OI</font></th>
         </tr>
         <tr>
         <th><input type="number" name="hist_ejeod" class="form-control">
@@ -79,26 +120,37 @@
         </table>
         <table>
         <tr>
-            <th><font face="Calibri">Eje ojo izquierdo</font></th>
-            <th><font face="Calibri">Diametro ojo derecho</font></th>
-            <th><font face="Calibri">Diametro ojo izquierdo</font></th>
+            <th><font face="Calibri">Eje OI</font></th>
+            <th><font face="Calibri">Diagnostico Ojo Derecho </font></th>
+            <th><font face="Calibri">Diagnostico  ojo izquierdo</font></th>
         </tr>
         <tr>
         <th><input type="number" name="hist_ejeoi" class="form-control">
             </th>
-            <th> <input type="number" name="hist_diaod"class="form-control" >
+            <th> <input type="text" name="hist_diaod"class="form-control" >
            </th>
-             <th>  <input type="number" name="hist_diaoi" class="form-control">
+             <th>  <input type="text" name="hist_diaoi" class="form-control">
             </th>
         </tr>
         </table>
+        
+        <table>
+        <div class="col-md-4">
+        <th> 
 
-            <div class="col-md-4">
-                <label class="form-label">Recomendaciones</label>
-                <input type="text" name="hist_recom" class="form-control" >
-            </div>
+        <font face="Calibri">Recomendaciones:</font>
+        <br>
+        <textarea  name="hist_recom"> </textarea> 
+
+        
+    </th>
+
+            
+           
+            
            
         </div>
+    </table>
         
 
 
