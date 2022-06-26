@@ -68,7 +68,7 @@
     }
 
     
-    public function verDetalle(){
+    public function verHistoria(){
         
         
         $obj= new HistoriaModel();

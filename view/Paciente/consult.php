@@ -35,7 +35,7 @@
                     //boton de Crear historia
                     echo "<td> <a href='".getUrl("Historia","Historia","GetInsert",array("pac_id"=>$pac['pac_id']))."'><button class='btn btn-success'>Crear historia</button> </a> </td>";
                     //boton de ver historia
-                    echo "<td> <a href='".getUrl("Historia","Historia","verDetalle",array("pac_id"=>$pac['pac_id']))."'><button class='btn btn-info'>Ver historia</button> </a> </td>";
+                    echo "<td> <a href='".getUrl("Historia","Historia","verHistoria",array("pac_id"=>$pac['pac_id']))."'><button class='btn btn-info'>Ver historia</button> </a> </td>";
 
 
                     echo"<td> </td>";

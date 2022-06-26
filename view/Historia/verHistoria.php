@@ -1,6 +1,6 @@
 <div class="mt-5">
     
-    <h3 class="display-4">Informacion  Historia medica </h3>
+    <h3 class="display-16" style="margin-left:16% " >Informacion  Historia medica </h3>
 </div>
 
 
@@ -12,23 +12,29 @@
     
 <center>
 
-<table>
-            <tr>
-           <th><font face="Calibri">No Historia Medica </font></th> 
-           <th><font face="Calibri">Nombre</font></th>
-           <th><font face="Calibri">Genero </font></th>
-            </tr>
-
-         <tr>
-            <input type="hidden" name="hist_id" value="<?=$hist['hist_id']?>">
-            <th> <?php echo $hist['hist_id'];?></th>
-            <hr>
-            <th>  <?php echo $hist['pac_nombre'];?></th>
-           <th> <div class="row-md-4">
-                  
-                            
-                                
-                            <?php
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+       <b>No. Historia Clinica</b>
+    </div>
+    <div class="col col-3"> 
+    <b> Nombre</b>
+    </div>
+    <div class="col col-3">
+     <b>Genero </b>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+    <?=$hist['hist_id']?>
+    </div>
+    <div class="col col-3">
+    <?php echo $hist['pac_nombre'];?>
+    </div>
+    <div class="col col-3">
+    <?php
                                 foreach ($generos as $gen){
                                     if ($gen['gen_id']==$hist['gen_id']) {
                                         echo $gen['gen_nombre'];
@@ -39,12 +45,11 @@
                                     
                                 
                             ?>
-                          
-                    </div>
-                            </th>
-                        
-            </tr>   
-        </table>
+    </div>
+  </div>
+</div>
+
+
        
 
 <hr>
