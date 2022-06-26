@@ -9,36 +9,52 @@
     ?>
     <hr>
 <center>
-<table table style="border: hidden">
-            <tr>
-           <th><font face="Calibri">Documento</font></th> 
-           <th><font face="Calibri">Nombre</font></th>
-           <th><font face="Calibri">Apellido</font></th>
-            </tr>
-
-         <tr>
-            <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
-            <th><?php echo $pac['pac_documento'];?></th>
-            <th><?php echo $pac['pac_nombre'];?></th>
-            <th><?php echo $pac['pac_apellido'];?></th>
-            </tr>   
-        </table>
-
-        <table table style="border: hidden">
-        <tr>
-            <th><font face="Calibri">Telefono:</font></th>
-            <th><font face="Calibri">Genero:</font></th>
-            <th><font face="Calibri">Estrato:</font></th>
-        </tr>
-        <tr>
-        <th><?php echo $pac['pac_telefono'];?>
-            </th>
-            <td>
-                    <div class="row-md-4">
-                   
-                           
-                               
-                            <?php
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+       <b>Documento: </b>
+    </div>
+    <div class="col col-3"> 
+    <b> Nombre</b>
+    </div>
+    <div class="col col-3">
+     <b>Apellido </b>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+      <?php echo $pac['pac_documento'];?> 
+    </div>
+    <div class="col col-3">
+    <?php echo $pac['pac_nombre'];?>
+    </div>
+    <div class="col col-3">
+    <?php echo $pac['pac_apellido'];?>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+       <b>Telefono </b>
+    </div>
+    <div class="col col-3"> 
+    <b> Genero:</b>
+    </div>
+    <div class="col col-3">
+     <b> Estrato </b>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col col-4">
+    <?php echo $pac['pac_telefono'];?>
+    </div>
+    <div class="col col-3"> 
+    <?php
                                 foreach ($generos as $gen){
                                     if ($gen['gen_id']==$pac['gen_id']) {
                                         echo $gen['gen_nombre'];
@@ -49,14 +65,9 @@
                                     
                                 
                             ?>
-                          
-                    </div>
-                </td>
-                <th> <div class="row-md-4">
-                  
-                  
-                     
-                  <?php
+    </div>
+    <div class="col col-3">
+    <?php
                       foreach ($estratos as $str){
                           if ($str['estr_id']==$pac['estr_id']) {
                             echo $str['estr_nombre'];
@@ -67,66 +78,70 @@
                           
                       
                   ?>
-                  </select>
-          </div>
-                  </th>
-              
-  </tr>   
-</table>
+    </div>
+  </div>
+</div>
 
-           
-            
-        </tr>
-        </table>
-        
 
         <?php
         }
          ?>
 </div>
 <hr>
+
+
 <center>
+
 <div class="mt-3">
     <form action="<?php echo getUrl("Historia","Historia","postInsert",array("pac_id"=>$pac['pac_id']));?>" method="post">
     <table>
+        <div class="col-md-10">
+        <th> 
+
+        <font face="Calibri">Motivo de visita:</font>
+        <br>
+        <textarea name="hist_motv" rows=3 cols=80></textarea>
+
+        
+    </th>
+    <table>
         <tr>
-            <th><font face="Calibri">Motivo de visita </font></th>
             <th><font face="Calibri">Esfera OD </font></th>
             <th><font face="Calibri">Cilindro OD</font></th>
+            <th><font face="Calibri">Eje OD</font></th>
         </tr>
         <tr>
-        <th><input type="text" name="hist_motv" class="form-control" placeholder="Motivo  de visita " required="required">
+        <th><input type="text" name="hist_esfod" class="form-control">
             </th>
-            <th> <input type="number" name="hist_esfod" class="form-control" >
+            <th> <input type="number" name="hist_cilod" class="form-control" >
            </th>
-             <th>  <input type="number" name="hist_cilod" class="form-control">
+             <th>  <input type="number" name="hist_ejeod" class="form-control">
             </th>
         </tr>
         </table>
         <table>
         <tr>
-            <th><font face="Calibri">Eje OD</font></th>
             <th><font face="Calibri">Esfera OI</font></th>
             <th><font face="Calibri">Cilindro OI</font></th>
+            <th><font face="Calibri">Eje OI</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_ejeod" class="form-control">
+        <th><input type="number" name="hist_esfoi" class="form-control">
             </th>
-            <th> <input type="number" name="hist_esfoi"class="form-control" >
+            <th> <input type="number" name="hist_ciloi"class="form-control" >
            </th>
-             <th>  <input type="number" name="hist_ciloi" class="form-control">
+             <th>  <input type="number" name="hist_ejeoi" class="form-control">
             </th>
         </tr>
         </table>
         <table>
         <tr>
-            <th><font face="Calibri">Eje OI</font></th>
+            
             <th><font face="Calibri">Diagnostico Ojo Derecho </font></th>
             <th><font face="Calibri">Diagnostico  ojo izquierdo</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_ejeoi" class="form-control">
-            </th>
+        
             <th> <input type="text" name="hist_diaod"class="form-control" >
            </th>
              <th>  <input type="text" name="hist_diaoi" class="form-control">
@@ -140,7 +155,7 @@
 
         <font face="Calibri">Recomendaciones:</font>
         <br>
-        <textarea  name="hist_recom"> </textarea> 
+        <textarea  placeholder="Digite las recomendaciones..." name="hist_recom" rows=3 cols=80></textarea> 
 
         
     </th>

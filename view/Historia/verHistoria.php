@@ -59,6 +59,7 @@
         </tr>
         <tr>
         <input type="hidden" name="hist_id" value="<?=$hist['hist_id']?>">
+        
         <th><input type="text" name="hist_motv" class="form-control" readonly value="<?php echo $hist['hist_motv'];?>"></th>
             </th>
             <th> <input type="number" name="hist_esfod" class="form-control" readonly value="<?php echo $hist['hist_esfod'];?>"></th>
@@ -89,7 +90,7 @@
             <th><font face="Calibri">Diagnostico ojo izquierdo</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_ejeoi" class="form-control"  readonly value="<?php echo $hist['hist_ejoi'];?>"></th>
+        <th><input type="number" name="hist_ejeoi" class="form-control"  readonly value="<?php echo $hist['hist_ejeoi'];?>"></th>
             </th>
             <th> <input type="text" name="hist_diaod"class="form-control"   readonly value="<?php echo $hist['hist_diaod'];?>"></th>
            </th>
