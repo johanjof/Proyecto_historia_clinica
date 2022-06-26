@@ -100,7 +100,7 @@
 
         <font face="Calibri">Motivo de visita:</font>
         <br>
-        <textarea name="hist_motv" rows=3 cols=80></textarea>
+        <textarea placeholder=" Motivo de visita" name="hist_motv" rows=3 cols=80></textarea>
 
         
     </th>
@@ -111,11 +111,11 @@
             <th><font face="Calibri">Eje OD</font></th>
         </tr>
         <tr>
-        <th><input type="text" name="hist_esfod" class="form-control">
+        <th><input type="text" placeholder="Esfera ojo derecho" name="hist_esfod" class="form-control">
             </th>
-            <th> <input type="number" name="hist_cilod" class="form-control" >
+            <th> <input type="number"  placeholder= "Cilindro ojo derecho" name="hist_cilod" class="form-control" >
            </th>
-             <th>  <input type="number" name="hist_ejeod" class="form-control">
+             <th>  <input type="number"  placeholder="Eje ojo derecho"  name="hist_ejeod" class="form-control">
             </th>
         </tr>
         </table>
@@ -126,11 +126,11 @@
             <th><font face="Calibri">Eje OI</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_esfoi" class="form-control">
+        <th><input type="number" placeholder="Esfera Ojo izquierdo" name="hist_esfoi" class="form-control">
             </th>
-            <th> <input type="number" name="hist_ciloi"class="form-control" >
+            <th> <input type="number"  placeholder= "Cilindro ojo izquierdo" name="hist_ciloi"class="form-control" >
            </th>
-             <th>  <input type="number" name="hist_ejeoi" class="form-control">
+             <th>  <input type="number" placeholder="Eje ojo izquierdo" name="hist_ejeoi" class="form-control">
             </th>
         </tr>
         </table>
@@ -142,9 +142,9 @@
         </tr>
         <tr>
         
-            <th> <input type="text" name="hist_diaod"class="form-control" >
+            <th> <input type="text" placeholder="Diagnostico ojo derecho" name="hist_diaod"class="form-control" >
            </th>
-             <th>  <input type="text" name="hist_diaoi" class="form-control">
+             <th>  <input type="text"  placeholder="Diagnostico ojo izquierdo" name="hist_diaoi" class="form-control">
             </th>
         </tr>
         </table>
@@ -174,7 +174,7 @@
         <div class="row">
         <center> 
             <div class="col-md-4 mt-4">
-               <input type="submit" value="Enviar" class="btn btn-success mt-2">
+               <input type="submit" value="Registrar historia medica" class="btn btn-info mt-2">
             </center>
             </div>
 
