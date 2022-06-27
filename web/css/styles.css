@@ -181,6 +181,15 @@ Main components
   font-size: 0.875rem;
   color: #000000;
 }
+.trigger2{
+  display: inline-block;
+  top: 84%;
+  margin: 4%;
+  right:0;
+  height: 40px;
+  padding: 0 .8em;
+  position: absolute;
+}
 .cd-menu-trigger span {
   /* hamburger icon */
   position: relative;
