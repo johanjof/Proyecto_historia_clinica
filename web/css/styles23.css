@@ -13,7 +13,7 @@ html * {
   margin: 0; padding: 0;
 }
 
-html, body {
+html{
   /* important for the full-width image to work */
   height: 100%;
 }
@@ -21,11 +21,14 @@ html, body {
 body {
   font-size: 100%;
   font-family: "Ubuntu", sans-serif;
-  background: linear-gradient(#eaeaea, #3e88ff);
-  color: #506074;
+  background: linear-gradient(#718bff, #3e88ff);
+  
+  color: #e4e4e4;
+  
+  
 }
 #lol{
-  color: #000000;
+  color: #e4e4e4;
 }
 
 li {
@@ -292,7 +295,7 @@ Main components
   background:#d2d5da;
   color: rgb(242, 242, 242);
   cursor: pointer;
-  margin: -1.5%;
+  margin: -1.4%;
   width: 100%;
   border: none;
   text-align: left;
@@ -305,7 +308,7 @@ Main components
 }
 
 .content {
-  padding: 0 18px;
+  padding: 1 20px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
@@ -327,7 +330,7 @@ Main components
 
   transition-property: transform;
 
-  transition-duration: 0.3s;
+  transition-duration: 0.1s;
 }
 #main-nav .cd-close-menu::before {
 
