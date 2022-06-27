@@ -1,6 +1,6 @@
 <div class="mt-5">
     <center>
-    <h3 class="display-4">Historia Clinica</h3>
+    <h3 class="display-16">Historia Clinica</h3>
 </div>
 
 <div class="mt-5">
