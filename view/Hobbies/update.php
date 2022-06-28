@@ -8,18 +8,18 @@
     ?>
 
     <form action="<?php echo getUrl("hobbies","hobbies","postUpdate");?>"method="post">
-    <label for="">Nombre del Hobbie</label>
-    <br>
-    <input type="hidden" name="hob_id" value="<?php echo $hob['hob_id'];?>">
-    <input type="text" name="hob_nombre" class="form-contol" placeholder="Nombre del Hobbie" value="<?php echo $hob['hob_nombre'];?>">
-
-</div>
-
-<div class="col-md-4 mt-4">
-    <input type="submit" value="Enviar" class="btn btn-success">
-</div>
-
-    </div>
+    
+    <div class="row">
+            <div class="col-md-4">
+                <label for="">Nombre del Hobbie</label>
+                <input type="hidden" name="hob_id" value="<?php echo $hob['hob_id']; ?>">
+                <input type="text" class="form-control" name="hob_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $hob['hob_nombre']; ?>">
+            </div>
+      
+            <div class="col-md-4 mt-4">
+                <input type="submit" value="Enviar" class="btn btn-success ">
+            </div>
+        </div>
 </form>
     <?php
         }

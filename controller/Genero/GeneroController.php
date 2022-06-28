@@ -17,9 +17,22 @@
             $ejecutar=$obj->insert($sql);
 
             if ($ejecutar) {
-                redirect(getUrl("Genero","Genero","getInsert"));
+                ?>
+                <script>
+          alert("Se registro correctamente");
+            
+          </script>
+          <?php 
+                redirect(getUrl("Genero","Genero","Consult"));
             }else{
-                echo "Recorcholis, hubo un error";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+            echo redirect(getUrl("Genero","Genero","Consult"));
+            
             }
         }
 
@@ -49,10 +62,23 @@
         $ejecutar=$obj -> update($sql);
         if ($ejecutar) {
 
-            redirect(getUrl("Genero","Genero","consult"));
-        
-        } else{
-            echo "Hubo error";
+            ?>
+            <script>
+     alert("Se editó correctamente");
+       
+     </script>
+     <?php
+           echo redirect(getUrl("Genero","Genero","Consult"));
+       }else{
+           
+           ?>
+           <script>
+    alert("No se efectuo el registro");
+      
+    </script>
+    <?php
+            echo redirect(getUrl("Genero","Genero","Consult"));
+            
 
         }
     }
@@ -73,10 +99,24 @@
         $ejecutar=$obj ->delete($sql);
         if ($ejecutar){
 
-            redirect(getUrl("Genero","Genero","consult"));
-        
-        } else{
-            echo "Hubo error";
+            ?>
+            <script>
+	  alert("Se eliminó correctamente");
+	    
+	  </script>
+      
+
+           <?php 
+            echo redirect(getUrl("Genero","Genero","Consult"));
+        }else{
+            ?>
+            <script>
+     alert("No se efectuo el registro");
+       
+     </script>
+     <?php
+
+    echo redirect(getUrl("Genero","Genero","Consult"));
 
         }
 

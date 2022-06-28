@@ -16,11 +16,27 @@ class EstratoController{
         $estr_nombre=$_POST['estr_nombre'];
         $sql="INSERT INTO estratos VALUES($estr_id,'$estr_nombre')";
         $ejecutar=$obj->insert($sql);
+        
         if ($ejecutar){
-            echo redirect(getUrl("Estrato","Estrato","getInsert"));
+            ?>
+            <script>
+	  alert("Se registro correctamente");
+	    
+	  </script>
+      
+
+           <?php 
+            echo redirect(getUrl("Estrato","Estrato","consult")); 
             
         }else{
-            echo "Estas en un error menor";
+            ?>
+             <script>
+	  alert("No se efectuo el registro");
+	    
+	  </script>
+      <?php
+            echo redirect(getUrl("Estrato","Estrato","consult")); 
+            
         }
     }
 
@@ -46,9 +62,23 @@ class EstratoController{
         $sql="UPDATE estratos SET estr_nombre='$estr_nombre' WHERE estr_id = $estr_id";
         $ejecutar=$obj->update($sql);
         if($ejecutar){
+            ?>
+             <script>
+	  alert("Se editó correctamente");
+	    
+	  </script>
+      <?php
             echo redirect(getUrl("Estrato","Estrato","consult"));
         }else{
-            echo "Estas en un error menor";
+            
+            ?>
+            <script>
+     alert("No se efectuo el registro");
+       
+     </script>
+     <?php
+            echo redirect(getUrl("Estrato","Estrato","consult"));
+           
         }
     }
 
@@ -67,9 +97,26 @@ class EstratoController{
         $ejecutar=$obj->delete($sql);
      
         if($ejecutar){
-            redirect(getUrl("Estrato","Estrato","consult"));
+           
+            ?>
+            <script>
+	  alert("Se eliminó correctamente");
+	    
+	  </script>
+      
+
+           <?php 
+            echo redirect(getUrl("Estrato","Estrato","consult")); 
         }else{
-            echo "Estas en un error menor";
+            ?>
+            <script>
+     alert("No se efectuo el registro");
+       
+     </script>
+     <?php
+            echo redirect(getUrl("Estrato","Estrato","consult")); 
+
+         
         }
     }
 }

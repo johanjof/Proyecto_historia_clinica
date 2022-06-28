@@ -33,6 +33,8 @@
             <input type="text" name="usu_nombre" class="form-control" placeholder="Nombre">
         </div>
             <div class="col-md-4 mt-4">
+            
+   
                 <input type="submit" value="Enviar" class="btn btn-success">
             </div>
 

@@ -40,6 +40,7 @@
                 ['usu_nombre']; ?>" placeholder="Nombre">
             </div>
             <div class="col-md-4 mt-5">
+          
                <input type="submit" value="enviar" class="btn btn-success"> 
             </div>
         </div>

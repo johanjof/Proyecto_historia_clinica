@@ -8,17 +8,26 @@
     ?>
 
     <form action="<?php echo getUrl("medicamentos","medicamentos","postDelete");?>"method="post">
-    <label for="">Nombre del Medicamento</label>
-    <br>
-    <input type="hidden" name="med_id" value="<?php echo $med['med_id'];?>">
-    <input type="text" name="med_nombre" class="form-contol" placeholder="Nombre del Medicamento" value="<?php echo $med['med_nombre'];?>" readonly>
+   
+    <div class="row">
+
+<div class="col-md-4">
+     <label for="">Nombre del Medicamento</label>
+
+    <input type="hidden" name="med_id" value="<?php echo $med['med_id']; ?>">
+    <input type="text" class="form-control" name="med_nombre" placeholder="Ingrese el genero" value="<?php echo $med['med_nombre'];?>" readonly>
+
 </div>
 
-<div class="col-md-4 mt-4">
-    <input type="submit" value="Aceptar" class="btn btn-success">
+<div class="col-md-4 mt-3">
+    <input type="submit"   value="Enviar" class="btn btn-success mt-2">
+    <input type="submit" value="Cancelar" class="btn btn-danger mt-2" formaction="<?php echo getUrl("Medicamentos","Medicamentos","consult");?>">
+
 </div>
 
-    </div>
+
+</div>
+
 </form>
     <?php
         }

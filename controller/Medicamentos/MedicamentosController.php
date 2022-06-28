@@ -28,11 +28,27 @@
 
             if($ejecutar){
 
-               echo redirect(getUrl("Medicamentos","Medicamentos","getInsert"));
+                ?>
+                <script>
+          alert("Se registro correctamente");
+            
+          </script>
+          
+    
+               <?php 
+
+               echo redirect(getUrl("Medicamentos","Medicamentos","Consult"));
 
             }else{
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
 
-                echo "Uy, hubo un error";
+        echo redirect(getUrl("Medicamentos","Medicamentos","Consult"));
+               
 
             }
 
@@ -70,11 +86,24 @@
             $ejecutar=$obj->update($sql);
 
             if ($ejecutar) {
+                ?>
+                <script>
+         alert("Se editó correctamente");
+           
+         </script>
+         <?php
 
             echo redirect(getUrl("Medicamentos","Medicamentos","consult"));
 
             } else {
-                echo "Uy, hubo un error";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+               echo redirect(getUrl("Medicamentos","Medicamentos","Consult"));
+                
             }
         }
 
@@ -95,9 +124,24 @@
 
             $ejecutar=$obj->delete($sql);
             if ($ejecutar) {
+                ?>
+                <script>
+          alert("Se eliminó correctamente");
+            
+          </script>
+          
+    
+               <?php 
                 redirect(getUrl("Medicamentos","Medicamentos","consult"));
             }else {
-                echo "Se presentó un error en la ejecucion";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+               echo redirect(getUrl("Medicamentos","Medicamentos","Consult"));
+                
             }
 
         }

@@ -48,12 +48,28 @@
                     $sql2="INSERT INTO paciente_hobbies VALUES ($id2,$pac_id,$hob)";
                     $ci=$obj->insert($sql2);
                 }
+                ?>
+                <script>
+          alert("Se registro correctamente");
+            
+          </script>
+          
+    
+               <?php 
 
-               echo redirect(getUrl("Paciente","Paciente","getInsert"));
+               echo redirect(getUrl("Paciente","Paciente","Consult"));
 
             }else{
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
 
-                echo "Uy, hubo un error";
+    echo redirect(getUrl("Paciente","Paciente","Consult"));
+               
+                
 
             } 
 
@@ -166,12 +182,25 @@
                     $sql2="INSERT INTO paciente_hobbies VALUES ($id2,$pac_id,$hob)";
                     $ci=$obj->insert($sql2);
                 }
+                ?>
+                <script>
+         alert("Se editó correctamente");
+           
+         </script>
+         <?php
 
 
             echo redirect(getUrl("Paciente","Paciente","consult"));
 
             } else {
-                echo "Uy, hubo un error";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+               echo redirect(getUrl("Paciente","Paciente","Consult"));
+                
             }
         }
 
@@ -215,9 +244,27 @@
             $sql="DELETE FROM paciente WHERE pac_id=$pac_id";
             $ejecutar=$obj->delete($sql);
             if ($ejecutar) {
+               
+                ?>
+                <script>
+          alert("Se eliminó correctamente");
+            
+          </script>
+          
+    
+               <?php 
                 redirect(getUrl("Paciente","Paciente","consult"));
+
             }else {
-                echo "Se presentó un error en la ejecucion";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+               echo redirect(getUrl("Paciente","Paciente","Consult"));
+                
+
             }
 
         }

@@ -27,12 +27,26 @@
             $ejecutar=$obj->insert($sql);
 
             if($ejecutar){
+                ?>
+                <script>
+          alert("Se registro correctamente");
+            
+          </script>
+          
+    
+               <?php 
 
                echo redirect(getUrl("Hobbies","Hobbies","consult"));
 
             }else{
-
-                echo "Uy, hubo un error";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+                redirect(getUrl("Hobbies","Hobbies","consult"));
+               
 
             }
 
@@ -70,11 +84,24 @@
             $ejecutar=$obj->update($sql);
 
             if ($ejecutar) {
+                ?>
+                <script>
+         alert("Se editó correctamente");
+           
+         </script>
+         <?php
 
             echo redirect(getUrl("Hobbies","Hobbies","consult"));
 
             } else {
-                echo "Uy, hubo un error";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+                redirect(getUrl("Hobbies","Hobbies","consult"));
+                
             }
         }
 
@@ -95,9 +122,24 @@
 
             $ejecutar=$obj->delete($sql);
             if ($ejecutar) {
+                ?>
+                <script>
+          alert("Se eliminó correctamente");
+            
+          </script>
+          
+    
+               <?php 
                 redirect(getUrl("Hobbies","Hobbies","consult"));
             }else {
-                echo "Se presentó un error en la ejecucion";
+                ?>
+                <script>
+         alert("No se efectuo el registro");
+           
+         </script>
+         <?php
+                redirect(getUrl("Hobbies","Hobbies","consult"));
+                
             }
 
         }

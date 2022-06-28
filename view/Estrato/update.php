@@ -12,6 +12,7 @@
                 <input type="hidden" name="estr_id" value="<?php echo $estr['estr_id']; ?>">
                 <input type="text" class="form-control" name="estr_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $estr['estr_nombre']; ?>">
             </div>
+      
             <div class="col-md-4 mt-4">
                 <input type="submit" value="Enviar" class="btn btn-success mt-2">
             </div>

@@ -150,6 +150,8 @@
         </table>
         
         <table>
+
+        
         <div class="col-md-4">
         <th> 
 
@@ -172,9 +174,10 @@
 
 
         <div class="row">
+       
         <center> 
             <div class="col-md-4 mt-4">
-               <input type="submit" value="Registrar historia medica" class="btn btn-info mt-2">
+               <input type="submit"  value="Registrar historia medica" class="btn btn-info mt-2">
             </center>
             </div>
 

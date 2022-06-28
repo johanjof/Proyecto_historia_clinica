@@ -128,6 +128,7 @@
         </table>
 
 <div class="col-md-4 mt-4">
+
     <input type="submit" value="Aceptar" class="btn btn-success">
     <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Paciente","Paciente","consult");?>"> <br>
 

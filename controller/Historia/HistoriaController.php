@@ -47,10 +47,25 @@
         $ejecutar=$obj->insert($sql);
        
         if ($ejecutar){
+            ?>
+            <script>
+	  alert("Se creó correctamente");
+	    
+	  </script>
+      
+
+           <?php 
             echo redirect(getUrl("Paciente","Paciente","consult"));
             
         }else{
-            echo "Error";
+            ?>
+            <script>
+     alert("No se efectuo el registro");
+       
+     </script>
+     <?php
+            echo redirect(getUrl("Paciente","Paciente","consult"));
+            
         }
     }
 
@@ -140,10 +155,23 @@
         $ejecutar=$obj->update($sql);
        
         if ($ejecutar){
+            ?>
+            <script>
+     alert("Se editó correctamente");
+       
+     </script>
+     <?php
             echo redirect(getUrl("Paciente","Paciente","consult"));
             
         }else{
-            echo "Error";
+            ?>
+            <script>
+     alert("No se efectuo el registro");
+       
+     </script>
+     <?php
+            echo redirect(getUrl("Paciente","Paciente","consult"));
+            
         }
 
 

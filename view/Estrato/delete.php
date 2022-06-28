@@ -12,6 +12,7 @@
                 <input type="hidden" name="estr_id" value="<?php echo $estr['estr_id']; ?>">
                 <input type="text"  class="form-control" name="estr_nombre" placeholder="Ingrese el departamento" value="<?php echo $estr['estr_nombre']; ?>" readonly>
             </div>
+               
             <div class="col-md-4 mt-4">
                 <input type="submit" value="Aceptar" class="btn btn-success mt-2" formaction="<?php echo getUrl("Estrato","Estrato","postDelete") ?>">
                 <input type="submit" value="Cancelar" class="btn btn-danger mt-2" formaction="<?php echo getUrl("Estrato","Estrato","consult");?>">

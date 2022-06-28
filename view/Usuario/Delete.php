@@ -22,7 +22,9 @@
                 echo $usu['usu_nombre']; ?>" placeholder="Nombre">
             </div>
             <div class="col-md-4 mt-5">
-               <input type="submit" value="Aceptar" class="btn btn-success"> 
+       
+   
+               <input type="submit"value="Aceptar" class="btn btn-success"> 
              <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Usuario","Usuario","consult");?>">
 
             </div>

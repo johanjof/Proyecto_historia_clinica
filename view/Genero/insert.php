@@ -13,7 +13,7 @@
                 <input type="text" class="form-control" name="gen_nombre" placeholder="Ingrese el genero">
             </div>
             <div class="col-md-4 mt-4">
-                <input type="submit" value="Enviar" class="btn btn-success mt-2">
+                <input type="submit"  value="Enviar" class="btn btn-success mt-2">
             </div>
 
 
