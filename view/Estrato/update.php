@@ -10,7 +10,7 @@
             <div class="col-md-4">
                 <label class="form-label">Nombre</label>
                 <input type="hidden" name="estr_id" value="<?php echo $estr['estr_id']; ?>">
-                <input type="text" class="form-control" name="estr_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $estr['estr_nombre']; ?>">
+                <input type="text" required="required" class="form-control" name="estr_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $estr['estr_nombre']; ?>">
             </div>
       
             <div class="col-md-4 mt-4">

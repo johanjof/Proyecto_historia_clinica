@@ -74,8 +74,8 @@
 
 		<a href="#" class="collapsible"><span>Roles</span></a>
 	  <div class="content">
-		  <a href="<?php echo getUrl("Roles","Roles","getInsert"); ?>"><p>Registrar Generos</p></a>
-		  <a href="<?php echo getUrl("Roles","Roles","consult"); ?>"><p>Consultar Generos</p></a>
+		  <a href="<?php echo getUrl("Roles","Roles","getInsert"); ?>"><p>Registrar Roles</p></a>
+		  <a href="<?php echo getUrl("Roles","Roles","consult"); ?>"><p>Consultar Roles</p></a>
 		</div>
 		<a href="#" class="collapsible"><span>Hobbies</span></a>
 	  <div class="content">

@@ -14,7 +14,7 @@
     <div class="col-md-4">
 
     <input type="hidden" name="rol_id" value="<?php echo $rol['rol_id'];?>">
-    <input type="text" class="form-control" name="rol_nombre" placeholder="Ingrese el rol del paciente" value="<?php echo $rol['rol_nombre']; ?>">
+    <input type="text" class="form-control" required="required" name="rol_nombre" placeholder="Ingrese el rol del paciente" value="<?php echo $rol['rol_nombre']; ?>">
 </div>
     
 <div class="col-md-4 ">

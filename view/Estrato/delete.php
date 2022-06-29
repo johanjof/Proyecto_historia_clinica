@@ -14,7 +14,7 @@
             </div>
                
             <div class="col-md-4 mt-4">
-                <input type="submit" value="Aceptar" class="btn btn-success mt-2" formaction="<?php echo getUrl("Estrato","Estrato","postDelete") ?>">
+                <input type="submit"  value="Aceptar" class="btn btn-success mt-2" formaction="<?php echo getUrl("Estrato","Estrato","postDelete") ?>">
                 <input type="submit" value="Cancelar" class="btn btn-danger mt-2" formaction="<?php echo getUrl("Estrato","Estrato","consult");?>">
             </div>
         </div>

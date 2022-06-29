@@ -7,10 +7,10 @@
     <div class="row">
         <div class="col-md-4">
             <label for="">Documento</label>
-            <input type="number" name="usu_docum" class="form-control" placeholder="Documento">
+            <input type="number" required="required" name="usu_docum" class="form-control" placeholder="Documento">
             
             <label for="">Contraseña</label>
-            <input type="password" name="usu_clave" class="form-control" placeholder="Contraseña">
+            <input type="password" required="required" name="usu_clave" class="form-control" placeholder="Contraseña">
             
             
         </div>
@@ -19,7 +19,7 @@
 
         <div class="col-md-4">
             <label for="">Rol</label>
-            <select name="rol_id" class="form-control">
+            <select required="required" name="rol_id" class="form-control">
             <option value="">Seleccione...</option>
             <?php
 
@@ -30,7 +30,7 @@
             ?>
             </select>
             <label for="">Nombre del usuario</label>
-            <input type="text" name="usu_nombre" class="form-control" placeholder="Nombre">
+            <input type="text" required="required" name="usu_nombre" class="form-control" placeholder="Nombre">
         </div>
             <div class="col-md-4 mt-4">
             

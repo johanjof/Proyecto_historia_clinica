@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <label class="form-label">Medicamento</label>
-            <input type="text" name="med_nombre" class="form-control" placeholder="Ingrese el Medicamento">
+            <input type="text" required="required" name="med_nombre" class="form-control" placeholder="Ingrese el Medicamento">
         </div>
 
 

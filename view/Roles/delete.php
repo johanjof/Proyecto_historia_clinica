@@ -15,13 +15,13 @@
     <label for="">Nombre del Rol</label>
     <br>
     <input type="hidden" name="rol_id" value="<?php echo $rol['rol_id'];?>">
-    <input type="text"  class="form-control" name="rol_nombre" placeholder="Ingrese el departamento" value="<?php echo $rol['rol_nombre']; ?>" readonly>
+    <input type="text"  class="form-control" required="required" name="rol_nombre" placeholder="Ingrese el departamento" value="<?php echo $rol['rol_nombre']; ?>" readonly>
 </div>
 
 <div class="col-md-4 mt-4">
 
     <input type="submit" value="Aceptar" class="btn btn-success">
-    <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Roles","Roles","consult");?>">
+    <input type="submit" value="Cancelar" required="required" class="btn btn-danger" formaction="<?php echo getUrl("Roles","Roles","consult");?>">
 
 </div>
 

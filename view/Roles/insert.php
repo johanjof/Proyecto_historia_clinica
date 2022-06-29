@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <label class="form-label">Rol</label>
-            <input type="text" name="rol_nombre" class="form-control" placeholder="Ingrese el Rol">
+            <input type="text" required="required" name="rol_nombre" class="form-control" placeholder="Ingrese el Rol">
         </div>
 
 

@@ -43,7 +43,7 @@
             <td>
             <label class="form-label"><b>Hobbies</b></label><br>    
             <?php foreach($hobbies as $hob){?>
-                <label><input type="checkbox" name="hobbie[]" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
+                <label><input type="checkbox"  name="hobbie[]" value="<?php echo $hob['hob_id']; ?>"><?php echo $hob['hob_nombre']; ?></label><br>
                 <?php } ?>
         </td>
         <td>
@@ -65,7 +65,7 @@
              <br> <label class="form-label"><b>Estratos</b></label><br>
          <?php foreach($estratos as $estr){?>
          
-                <label><input type="radio" name="estr_id" value="<?php echo $estr['estr_id']; ?>"><?php echo $estr['estr_nombre']; ?></label><br>
+                <label><input type="radio" required="required" name="estr_id" value="<?php echo $estr['estr_id']; ?>"><?php echo $estr['estr_nombre']; ?></label><br>
                 <?php } ?>
             </td>
         </tr>

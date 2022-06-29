@@ -100,7 +100,7 @@
 
         <font face="Calibri">Motivo de visita:</font>
         <br>
-        <textarea placeholder=" Motivo de visita" name="hist_motv" rows=3 cols=80></textarea>
+        <textarea required="required" placeholder=" Motivo de visita" name="hist_motv" rows=3 cols=80></textarea>
 
         
     </th>
@@ -111,11 +111,11 @@
             <th><font face="Calibri">Eje OD</font></th>
         </tr>
         <tr>
-        <th><input type="text" placeholder="Esfera ojo derecho" name="hist_esfod" class="form-control">
+        <th><input type="text" required="required" placeholder="Esfera ojo derecho" name="hist_esfod" class="form-control">
             </th>
-            <th> <input type="number"  placeholder= "Cilindro ojo derecho" name="hist_cilod" class="form-control" >
+            <th> <input type="number" required="required"  placeholder= "Cilindro ojo derecho" name="hist_cilod" class="form-control" >
            </th>
-             <th>  <input type="number"  placeholder="Eje ojo derecho"  name="hist_ejeod" class="form-control">
+             <th>  <input type="number" required="required"  placeholder="Eje ojo derecho"  name="hist_ejeod" class="form-control">
             </th>
         </tr>
         </table>
@@ -126,11 +126,11 @@
             <th><font face="Calibri">Eje OI</font></th>
         </tr>
         <tr>
-        <th><input type="number" placeholder="Esfera Ojo izquierdo" name="hist_esfoi" class="form-control">
+        <th><input type="number" required="required" placeholder="Esfera Ojo izquierdo" name="hist_esfoi" class="form-control">
             </th>
-            <th> <input type="number"  placeholder= "Cilindro ojo izquierdo" name="hist_ciloi"class="form-control" >
+            <th> <input type="number" required="required" placeholder= "Cilindro ojo izquierdo" name="hist_ciloi"class="form-control" >
            </th>
-             <th>  <input type="number" placeholder="Eje ojo izquierdo" name="hist_ejeoi" class="form-control">
+             <th>  <input type="number" required="required" placeholder="Eje ojo izquierdo" name="hist_ejeoi" class="form-control">
             </th>
         </tr>
         </table>
@@ -142,9 +142,9 @@
         </tr>
         <tr>
         
-            <th> <input type="text" placeholder="Diagnostico ojo derecho" name="hist_diaod"class="form-control" >
+            <th> <input type="text" required="required" placeholder="Diagnostico ojo derecho" name="hist_diaod"class="form-control" >
            </th>
-             <th>  <input type="text"  placeholder="Diagnostico ojo izquierdo" name="hist_diaoi" class="form-control">
+             <th>  <input type="text" required="required" placeholder="Diagnostico ojo izquierdo" name="hist_diaoi" class="form-control">
             </th>
         </tr>
         </table>
@@ -157,7 +157,7 @@
 
         <font face="Calibri">Recomendaciones:</font>
         <br>
-        <textarea  placeholder="Digite las recomendaciones..." name="hist_recom" rows=3 cols=80></textarea> 
+        <textarea required="required"  placeholder="Digite las recomendaciones..." name="hist_recom" rows=3 cols=80></textarea> 
 
         
     </th>

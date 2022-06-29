@@ -97,13 +97,13 @@
             <th><font face="Calibri">Cilindro OD</font></th>
         </tr>
         <tr>
-        <input type="hidden" name="hist_id" value="<?php=$hist['hist_id']?>">
+        <input type="hidden" required="required" name="hist_id" value="<?php=$hist['hist_id']?>">
 
-        <th><input type="text" name="hist_motv" class="form-control"  value="<?php echo $hist['hist_motv'];?>">
+        <th><input type="text" required="required" name="hist_motv" class="form-control"  value="<?php echo $hist['hist_motv'];?>">
             </th>
-            <th> <input type="number" name="hist_esfod" class="form-control"  value="<?php echo $hist['hist_esfod'];?>" >
+            <th> <input type="number" required="required" name="hist_esfod" class="form-control"  value="<?php echo $hist['hist_esfod'];?>" >
            </th>
-             <th>  <input type="number" name="hist_cilod" class="form-control"  value="<?php echo $hist['hist_cilod'];?>">
+             <th>  <input type="number" required="required" name="hist_cilod" class="form-control"  value="<?php echo $hist['hist_cilod'];?>">
             </th>
         </tr>
         </table>
@@ -114,11 +114,11 @@
             <th><font face="Calibri">Cilindro OI</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_ejeod" class="form-control" value="<?php echo $hist['hist_ejeod'];?>">
+        <th><input type="number" required="required" name="hist_ejeod" class="form-control" value="<?php echo $hist['hist_ejeod'];?>">
             </th>
-            <th> <input type="number" name="hist_esfoi"class="form-control" value="<?php echo $hist['hist_esfoi'];?>" >
+            <th> <input type="number" required="required" name="hist_esfoi"class="form-control" value="<?php echo $hist['hist_esfoi'];?>" >
            </th>
-             <th>  <input type="number" name="hist_ciloi" class="form-control" value="<?php echo $hist['hist_ciloi'];?>">
+             <th>  <input type="number" required="required" name="hist_ciloi" class="form-control" value="<?php echo $hist['hist_ciloi'];?>">
             </th>
         </tr>
         </table>
@@ -129,11 +129,11 @@
             <th><font face="Calibri">Diagnostico  ojo izquierdo</font></th>
         </tr>
         <tr>
-        <th><input type="number" name="hist_ejeoi" class="form-control" value="<?php echo $hist['hist_ejeoi'];?>">
+        <th><input type="number" name="hist_ejeoi" required="required" class="form-control" value="<?php echo $hist['hist_ejeoi'];?>">
             </th>
-            <th> <input type="text" name="hist_diaod"class="form-control" value="<?php echo $hist['hist_diaod'];?>" >
+            <th> <input type="text" name="hist_diaod" required="required" class="form-control" value="<?php echo $hist['hist_diaod'];?>" >
            </th>
-             <th>  <input type="text" name="hist_diaoi" class="form-control" value="<?php echo $hist['hist_diaoi'];?>">
+             <th>  <input type="text" name="hist_diaoi" required="required" class="form-control" value="<?php echo $hist['hist_diaoi'];?>">
             </th>
         </tr>
         </table>
@@ -143,7 +143,7 @@
         <th> 
 
         <font face="Calibri">Recomendaciones:</font>
-        <input type="text" name="hist_recom" class="form-control" value="<?php echo $hist['hist_recom'];?>">
+        <input type="text" name="hist_recom" required="required" class="form-control" value="<?php echo $hist['hist_recom'];?>">
 
         <br>
        

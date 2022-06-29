@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <label for="">Nombre del Medicamento</label>
                 <input type="hidden" name="med_id" value="<?php echo $hob['med_id']; ?>">
-                <input type="text" class="form-control" name="med_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $med['med_nombre']; ?>">
+                <input type="text" required="required" class="form-control" name="med_nombre" placeholder="Ingrese el nombre del paciente" value="<?php echo $med['med_nombre']; ?>">
             </div>
       
             <div class="col-md-4 mt-4">

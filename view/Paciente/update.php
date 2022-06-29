@@ -18,9 +18,9 @@
 
          <tr>
             <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
-            <th>   <input type="text"  name="pac_documento" class="form-control" placeholder="Documento"  value="<?php echo $pac['pac_documento'];?>"></th>
-            <th>  <input type="text"  name="pac_nombre" class="form-control" placeholder="Nombres" value="<?php echo $pac['pac_nombre'];?>" ></th>
-            <th> <input type="text"  name="pac_apellido" class="form-control" placeholder="Apellidos" value="<?php echo $pac['pac_apellido'];?>"></th>
+            <th>   <input type="text" required="required"  name="pac_documento" class="form-control" placeholder="Documento"  value="<?php echo $pac['pac_documento'];?>"></th>
+            <th>  <input type="text" required="required"  name="pac_nombre" class="form-control" placeholder="Nombres" value="<?php echo $pac['pac_nombre'];?>" ></th>
+            <th> <input type="text" required="required" name="pac_apellido" class="form-control" placeholder="Apellidos" value="<?php echo $pac['pac_apellido'];?>"></th>
             </tr>   
         </table>
 
@@ -31,7 +31,7 @@
             <th><font face="Calibri">Correo</font></th>
         </tr>
         <tr>
-        <th><input type="text"  name="pac_direccion" class="form-control" placeholder="Dirección" value="<?php echo $pac['pac_direccion'];?>">
+        <th><input type="text"  name="pac_direccion" class="form-control" placeholder="Dirección" required="required" value="<?php echo $pac['pac_direccion'];?>">
             </th>
             <th> <input type="number"  name="pac_telefono" class="form-control" placeholder="Teléfono" required="required" value="<?php echo $pac['pac_telefono'];?>">
            </th>
@@ -92,7 +92,7 @@
                            
                        
                     ?>
-                    <input type="radio" <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
+                    <input required="required" type="radio" <?php echo $check ?> name="estr_id" value="<?php echo $estr['estr_id'];?>"> 
 
                     <?php
                         echo $estr['estr_nombre']."<br>"; 

@@ -8,11 +8,11 @@
                 <label>Documento</label>
                 <input type="hidden" name="usu_id" value="<?php echo $usu['usu_id']; ?>">
 
-                <input type="text" name="usu_docum" class="form-control" value="<?php echo $usu
+                <input type="text" required="required" name="usu_docum" class="form-control" value="<?php echo $usu
                 ['usu_docum']; ?>" placeholder="Documento">
 
                 <label for="">Contraseña</label>
-                <input type="text" name="usu_clave" class="form-control" value="<?php echo $usu
+                <input type="password" required="required" name="usu_clave" class="form-control" value="<?php echo $usu
                 ['usu_clave']; ?>" placeholder="Contraseña">
 
                 
@@ -22,7 +22,7 @@
             
             <div class="form-group col-md-4 mt-4">
                 <label>Roles</label>
-                <select name="rol_id" class="form-control">
+                <select required="required" name="rol_id" class="form-control">
                     <option value="">Seleccione...</option>
                     <?php
                         while ($rol=mysqli_fetch_assoc($roles)) {
@@ -36,7 +36,7 @@
                     ?>
                 </select>
                 <label for="">Nombre del usuario</label>
-                <input type="text" name="usu_nombre" class="form-control" value="<?php echo $usu
+                <input type="text" required="required" name="usu_nombre" class="form-control" value="<?php echo $usu
                 ['usu_nombre']; ?>" placeholder="Nombre">
             </div>
             <div class="col-md-4 mt-5">

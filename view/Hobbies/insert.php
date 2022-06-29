@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-4">
             <label class="form-label">Hobbie</label>
-            <input type="text" name="hob_nombre" class="form-control" placeholder="Ingrese el Hobbie">
+            <input type="text" required="required" name="hob_nombre" class="form-control" placeholder="Ingrese el Hobbie">
         </div>
 
 

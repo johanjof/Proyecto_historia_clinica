@@ -6,26 +6,26 @@
         <div class="row">
             <div class="form-group col-md-4 mt-4">
                 <label>Documento</label>
-                <input type="hidden" name="usu_id" value="<?php echo $usu['usu_id']; ?>">
-                <input type="number" readonly name="usu_docum" class="form-control" value="<?php
+                <input type="hidden"  name="usu_id" value="<?php echo $usu['usu_id']; ?>">
+                <input type="number" required="required" readonly name="usu_docum" class="form-control" value="<?php
                 echo $usu['usu_docum']; ?>" placeholder="Documento">
                 <label>Contraseña</label>
-                <input type="text" readonly name="usu_clave" class="form-control" value="<?php
+                <input type="text" required="required" readonly name="usu_clave" class="form-control" value="<?php
                 echo $usu['usu_clave']; ?>" placeholder="Contraseña">
             </div>
             <div class="form-group col-md-4 mt-4">
                 <label>Rol</label>
-                <input type="text" readonly name="rol_nombre" class="form-control" value="<?php echo $usu['rol_nombre']; ?>">
+                <input type="text" required="required" readonly name="rol_nombre" class="form-control" value="<?php echo $usu['rol_nombre']; ?>">
                 
                 <label>Nombre del usuario</label>
-                <input type="text" readonly name="usu_nombre" class="form-control" value="<?php
+                <input type="text" required="required" readonly name="usu_nombre" class="form-control" value="<?php
                 echo $usu['usu_nombre']; ?>" placeholder="Nombre">
             </div>
             <div class="col-md-4 mt-5">
        
    
                <input type="submit"value="Aceptar" class="btn btn-success"> 
-             <input type="submit" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Usuario","Usuario","consult");?>">
+             <input type="submit" required="required" value="Cancelar" class="btn btn-danger" formaction="<?php echo getUrl("Usuario","Usuario","consult");?>">
 
             </div>
         </div>

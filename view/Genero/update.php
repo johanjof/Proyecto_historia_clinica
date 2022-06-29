@@ -17,7 +17,7 @@
             <div class="col-md-4">
                 <label class="form-label">Nombre genero</label>
                 <input type="hidden" name="gen_id" value="<?php echo $gen['gen_id']; ?>">
-                <input type="text" class="form-control" name="gen_nombre"placeholder="Ingrese el genero" value="<?php echo $gen['gen_nombre'];?>">
+                <input type="text" required="required" class="form-control" name="gen_nombre"placeholder="Ingrese el genero" value="<?php echo $gen['gen_nombre'];?>">
 
             </div>
             <div class="col-md-4 mt-4">
