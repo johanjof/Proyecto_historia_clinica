@@ -77,7 +77,9 @@
                     </div>
                 </td>
 
+                 
                 <td>
+                   
               <label class="form-label"><b>Estratos</b></label><br>
 
          <?php foreach($estratos as $estr){?>
