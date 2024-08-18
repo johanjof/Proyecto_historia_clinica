@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../model/Medicamentos/MedicamentosModel.php';
+    include_once './model/Medicamentos/MedicamentosModel.php';
 
     class MedicamentosController{
         public function getInsert(){
@@ -11,7 +11,7 @@
 
             $medicamentos=$obj ->consult($sql);
 
-            include_once '../view/Medicamentos/insert.php';
+            include_once './view/Medicamentos/insert.php';
 
         }
 
@@ -60,7 +60,7 @@
             $sql="SELECT * FROM medicamentos";
             $medicamentos=$obj->consult($sql);
 
-            include_once '../view/Medicamentos/consult.php';
+            include_once './view/Medicamentos/consult.php';
         }
 
         public function getUpdate(){
@@ -71,7 +71,7 @@
             $sql="SELECT * FROM medicamentos WHERE med_id=$med_id";
             $medicamentos=$obj->consult($sql);
 
-            include_once "../view/Medicamentos/update.php";
+            include_once "./view/Medicamentos/update.php";
         }
 
         public function postUpdate(){
@@ -113,7 +113,7 @@
             $med_id=$_GET['med_id'];
             $sql="SELECT * FROM medicamentos WHERE med_id=$med_id";
             $medicamentos=$obj->consult($sql);
-            include_once '../view/Medicamentos/delete.php'; 
+            include_once './view/Medicamentos/delete.php'; 
         }
 
         public function postDelete(){

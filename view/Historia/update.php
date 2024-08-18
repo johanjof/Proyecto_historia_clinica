@@ -26,7 +26,7 @@
 <div class="container">
   <div class="row">
     <div class="col col-4">
-      <?php echo $hist['pac_documento'];?> 
+      <?php echo $hist['pac_id'];?> 
     </div>
     <div class="col col-3">
     <?php echo $hist['pac_nombre'];?>
@@ -97,7 +97,7 @@
             <th><font face="Calibri">Cilindro OD</font></th>
         </tr>
         <tr>
-        <input type="hidden" required="required" name="hist_id" value="<?php=$hist['hist_id']?>">
+        <input type="hidden" required="required" name="hist_id" value="<?=$hist['hist_id']?>">
 
         <th><input type="text" required="required" name="hist_motv" class="form-control"  value="<?php echo $hist['hist_motv'];?>">
             </th>

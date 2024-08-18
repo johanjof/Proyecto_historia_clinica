@@ -1,5 +1,5 @@
 <?php
-include_once '../model/MasterModel.php';
+include_once './model/MasterModel.php';
     class LoginModel extends MasterModel {
         private $usu_id;
         private $usu_docum;

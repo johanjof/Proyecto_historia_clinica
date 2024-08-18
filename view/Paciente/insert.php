@@ -17,7 +17,7 @@
             </tr>
 
          <tr>
-            <th>   <input type="text" name="pac_documento" class="form-control" placeholder="Documento" required="required"></th>
+            <th>   <input type="number" name="pac_documento" class="form-control" placeholder="Documento" required="required"></th>
             <th>  <input type="text" name="pac_nombre" class="form-control" placeholder="Nombres" required="required"></th>
             <th> <input type="text" name="pac_apellido" class="form-control" placeholder="Apellidos" required="required"></th>
             </tr>   
@@ -34,7 +34,7 @@
             </th>
             <th> <input type="number" name="pac_telefono" class="form-control" placeholder="Teléfono" required="required">
            </th>
-             <th> <input type="mail" name="pac_correo" class="form-control" placeholder="correo" required="required">
+             <th> <input type="email" name="pac_correo" class="form-control" placeholder="correo" required="required">
             </th>
         </tr>
     

@@ -1,6 +1,6 @@
 <?php
      
-     include_once '../model/Usuario/UsuarioModel.php';
+     include_once './model/Usuario/UsuarioModel.php';
 
      class UsuarioController{
             public function getInsert(){
@@ -10,7 +10,7 @@
              $sql="SELECT * FROM roles";
              $usuarios = $obj->consult($sql);
      
-             include_once '../view/Usuario/insert.php'; 
+             include_once './view/Usuario/insert'; 
          }
 
          public function postInsert(){

@@ -1,10 +1,10 @@
 <?php 
 
-    include_once '../model/Genero/GeneroModel.php';
+    include_once './model/Genero/GeneroModel.php';
 
     class GeneroController{
         public function getInsert(){
-            include_once '../view/Genero/insert.php';
+            include_once './view/Genero/insert.php';
         }
 
         public function postInsert(){
@@ -42,7 +42,7 @@
             $sql="SELECT * FROM generos";
             $generos=$obj->consult($sql);
 
-            include_once '../view/Genero/consult.php';
+            include_once './view/Genero/consult.php';
         
         }
 
@@ -51,7 +51,7 @@
             $gen_id=$_GET ['gen_id'];
             $sql="SELECT * FROM generos WHERE gen_id=$gen_id";
             $generos=$obj-> consult($sql);
-            include_once '../view/Genero/update.php';
+            include_once './view/Genero/update.php';
 
         }
         public function postUpdate(){
@@ -88,7 +88,7 @@
             $gen_id=$_GET ['gen_id'];
             $sql="SELECT* FROM generos WHERE gen_id=$gen_id";
             $generos=$obj-> delete($sql);
-            include_once '../view/Genero/delete.php';
+            include_once './view/Genero/delete.php';
 
         }
         public function postDelete(){

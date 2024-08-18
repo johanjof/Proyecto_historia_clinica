@@ -1,12 +1,12 @@
 <?php
 
 
-include_once '../model/Estrato/EstratoModel.php';
+include_once './model/Estrato/EstratoModel.php';
 
 class EstratoController{
 
     public function getInsert(){
-        include_once '../view/Estrato/insert.php';        
+        include_once './view/Estrato/insert.php';        
     }
 
     public function postInsert(){
@@ -44,7 +44,7 @@ class EstratoController{
         $obj=new EstratoModel();
         $sql="SELECT * FROM estratos";
         $estratos=$obj->consult($sql);
-        include_once '../view/Estrato/consult.php';
+        include_once './view/Estrato/consult.php';
     }
 
     public function getUpdate(){
@@ -52,7 +52,7 @@ class EstratoController{
         $estr_id=$_GET['estr_id'];
         $sql="SELECT * FROM estratos WHERE estr_id= $estr_id";
         $estratos=$obj->consult($sql);
-        include_once '../view/Estrato/update.php';
+        include_once './view/Estrato/update.php';
     }
 
     public function postUpdate(){
@@ -87,7 +87,7 @@ class EstratoController{
         $estr_id=$_GET['estr_id'];
         $sql="SELECT * FROM estratos WHERE estr_id= $estr_id";
         $estrato=$obj->consult($sql);
-        include_once '../view/Estrato/delete.php';
+        include_once './view/Estrato/delete.php';
     }
 
     public function postDelete(){

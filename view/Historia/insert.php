@@ -25,7 +25,7 @@
 <div class="container">
   <div class="row">
     <div class="col col-4">
-      <?php echo $pac['pac_documento'];?> 
+      <?php echo $pac['pac_id'];?> 
     </div>
     <div class="col col-3">
     <?php echo $pac['pac_nombre'];?>

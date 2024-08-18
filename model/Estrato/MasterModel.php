@@ -1,6 +1,6 @@
 <?php
 
-include_once '../lib/conf/connection.php';
+include_once './lib/conf/connection.php';
 
 class MasterModel extends connection{
 

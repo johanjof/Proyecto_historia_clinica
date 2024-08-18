@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../model/Hobbies/HobbiesModel.php';
+    include_once './model/Hobbies/HobbiesModel.php';
 
     class HobbiesController{
         public function getInsert(){
@@ -11,7 +11,7 @@
 
             $hobbies=$obj ->consult($sql);
 
-            include_once '../view/Hobbies/insert.php';
+            include_once './view/Hobbies/insert.php';
 
         }
 
@@ -58,7 +58,7 @@
             $sql="SELECT * FROM hobbies";
             $hobbies=$obj->consult($sql);
 
-            include_once '../view/Hobbies/consult.php';
+            include_once './view/Hobbies/consult.php';
         }
 
         public function getUpdate(){
@@ -69,7 +69,7 @@
             $sql="SELECT * FROM hobbies WHERE hob_id=$hob_id";
             $hobbies=$obj->consult($sql);
 
-            include_once "../view/Hobbies/update.php";
+            include_once "./view/Hobbies/update.php";
         }
 
         public function postUpdate(){
@@ -111,7 +111,7 @@
             $hob_id=$_GET['hob_id'];
             $sql="SELECT * FROM hobbies WHERE hob_id=$hob_id";
             $hobbies=$obj->consult($sql);
-            include_once '../view/Hobbies/delete.php'; 
+            include_once './view/Hobbies/delete.php'; 
         }
 
         public function postDelete(){

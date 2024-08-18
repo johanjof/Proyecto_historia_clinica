@@ -1,62 +1,60 @@
 <?php
 
-    function redirect($url){
-        echo "<script type='text/javascript'>"
+function redirect($url){
+    echo "<script type='text/javascript'>"
         ."window.location.href='$url'"
         ."</script>";
-    }
+}
 
-    function dd($var){
-        echo "<prev>";
-        die(print_r($var));
-    }
+function dd($var){
+    echo "<pre>";
+    die(print_r($var));
+}
 
-    function getUrl ($modulo, $controlador, $funcion, $parametros=false, $pagina=false){
-        
-        if ($pagina==false) {
-            $pagina="index";
+function getUrl($modulo, $controlador, $funcion, $parametros=false, $pagina=false){
+    if ($pagina == false) {
+        $pagina = "index";
+    }
+    $url = "$pagina.php?modulo=$modulo&controlador=$controlador&funcion=$funcion";
+
+    if ($parametros != false) {
+        foreach ($parametros as $key => $value){
+            $url .= "&$key=$value";
         }
-        $url="$pagina.php?modulo=$modulo&controlador=$controlador&funcion=$funcion";
-
-        
-
-        if ($parametros!=false) {
-            foreach ($parametros as $key => $value){
-                $url.="&$key=$value";
-            }
-        }
-
-        return $url;
     }
 
-    function resolve(){
-        //modulo: carpeta
-        //controlador: archivo dentro de la carpeta modulo
-        //funcion: método dentro del controlador
+    return $url;
+}
 
-        $modulo=ucwords($_GET['modulo']);
-        $controlador=ucwords($_GET['controlador']);
-        $funcion=$_GET['funcion'];
+function resolve(){
+    $modulo = ucwords($_GET['modulo']);
+    $controlador = ucwords($_GET['controlador']);
+    $funcion = $_GET['funcion'];
 
-        if (is_dir("../controller/$modulo")){
-            if (is_file("../controller/$modulo/".$controlador."Controller.php")){
+    // Verificación de ruta completa al módulo
+    $rutaModulo = realpath(__DIR__ . "/../controller/$modulo");
 
-                include_once "../controller/$modulo/".$controlador."Controller.php";
+    if (is_dir($rutaModulo)) {
+        $rutaControlador = $rutaModulo . "/" . $controlador . "Controller.php";
 
-                $nombreClase = $controlador."Controller";
-                $objeto = new $nombreClase();
+        // Verificación de existencia del archivo del controlador
+        if (is_file($rutaControlador)) {
+            include_once $rutaControlador;
 
-                if (method_exists($objeto,$funcion)){
-                    $objeto->$funcion();
-                } else {
-                    echo "La funcion no existe";
-                }
+            $nombreClase = $controlador . "Controller";
+            $objeto = new $nombreClase();
+
+            // Verificación de la existencia de la función en el controlador
+            if (method_exists($objeto, $funcion)) {
+                $objeto->$funcion();
             } else {
-                echo "El controlador no existe";
+                echo "La función '$funcion' no existe en el controlador '$nombreClase'.";
             }
         } else {
-            Echo "El modulo no existe";
+            echo "El archivo del controlador no existe: $rutaControlador";
         }
+    } else {
+        echo "El módulo '$modulo' no existe en la ruta: $rutaModulo";
     }
-
+}
 ?>

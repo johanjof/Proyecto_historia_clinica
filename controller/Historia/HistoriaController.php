@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../model/Historia/HistoriaModel.php';
+    include_once './model/Historia/HistoriaModel.php';
 
     class HistoriaController{
         public function getInsert(){
@@ -21,7 +21,7 @@
 
 
 
-            include_once '../view/Historia/insert.php';
+            include_once './view/Historia/insert.php';
 
         }
 
@@ -79,7 +79,7 @@
         $generos = $obj-> consult($sql);
        
 
-        include_once '../view/paciente/consult.php';
+        include_once './view/paciente/consult.php';
     }
 
     
@@ -106,7 +106,7 @@
 
     
 
-        include_once '../view/Historia/verHistoria.php';
+        include_once './view/Historia/verHistoria.php';
     }
 
 
@@ -129,7 +129,7 @@
         $estratos = $obj-> consult($sql);
 
 
-        include_once "../view/Historia/update.php";
+        include_once "./view/Historia/update.php";
     }
 
     public function postUpdate(){

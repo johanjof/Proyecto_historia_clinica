@@ -1,6 +1,6 @@
 <?php
 
-    include_once '../model/Roles/RolesModel.php';
+    include_once './model/Roles/RolesModel.php';
 
     class RolesController{
         public function getInsert(){
@@ -11,7 +11,7 @@
 
             $roles=$obj ->consult($sql);
 
-            include_once '../view/Roles/insert.php';
+            include_once './view/Roles/insert.php';
 
         }
 
@@ -58,7 +58,7 @@
             $sql="SELECT * FROM roles";
             $roles=$obj->consult($sql);
 
-            include_once '../view/Roles/consult.php';
+            include_once './view/Roles/consult.php';
         }
 
         public function getUpdate(){
@@ -69,7 +69,7 @@
             $sql="SELECT * FROM roles WHERE rol_id=$rol_id";
             $roles=$obj->consult($sql);
 
-            include_once "../view/Roles/update.php";
+            include_once "./view/Roles/update.php";
         }
 
         public function postUpdate(){
@@ -111,7 +111,7 @@
             $rol_id=$_GET['rol_id'];
             $sql="SELECT * FROM roles WHERE rol_id=$rol_id";
             $roles=$obj->consult($sql);
-            include_once '../view/Roles/delete.php'; 
+            include_once './view/Roles/delete.php'; 
         }
 
         public function postDelete(){

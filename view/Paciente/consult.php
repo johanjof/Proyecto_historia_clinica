@@ -17,7 +17,7 @@
             <?php
                 foreach ($paciente as $pac ) {
                     echo "<tr>";
-                    echo "<td>".$pac['pac_documento']."</td>";
+                    echo "<td>".$pac['pac_id']."</td>";
                     echo "<td>".$pac['pac_nombre']."</td>";
                     echo "<td>".$pac['pac_apellido']."</td>";
                     echo "<td>".$pac['pac_telefono']."</td>";

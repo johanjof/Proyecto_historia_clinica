@@ -1,5 +1,5 @@
 <?php
-     include_once '../model/Usuario/UsuarioModel.php';
+     include_once './model/Usuario/UsuarioModel.php';
 
      class UsuarioController{
          /* public function getInsert(){
@@ -9,6 +9,6 @@
              $sql="SELECT * FROM departamento";
              $departamentos = $obj->consult($sql);
      
-             include_once '../view/Ciudad/insert.php'; */
+             include_once './view/Ciudad/insert.php'; */
          }
 ?>

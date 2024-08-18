@@ -18,7 +18,7 @@
 
          <tr>
             <input type="hidden" name="pac_id" value="<?=$pac['pac_id']?>">
-            <th>   <input type="text" readonly name="pac_documento" class="form-control" readonly value="<?php echo $pac['pac_documento'];?>"></th>
+            <th>   <input type="text" readonly name="pac_id" class="form-control" readonly value="<?php echo $pac['pac_id'];?>"></th>
             <th>  <input type="text" readonly name="pac_nombre" class="form-control" value="<?php echo $pac['pac_nombre'];?>" ></th>
             <th> <input type="text" readonly name="pac_apellido" class="form-control" value="<?php echo $pac['pac_apellido'];?>"></th>
             </tr>   

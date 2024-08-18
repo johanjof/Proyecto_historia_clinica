@@ -1,5 +1,5 @@
 <?php
-include_once '../model/Login/LoginModel.php';
+include_once './model/Login/LoginModel.php';
 
 class LoginController{
     

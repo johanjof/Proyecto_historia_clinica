@@ -1,5 +1,5 @@
 <?php
-     include_once '../model/Usuario/UsuarioModel.php';
+     include_once './model/Usuario/UsuarioModel.php';
 
      class UsuarioController{
          public function getInsert(){
@@ -8,7 +8,7 @@
      
              $sql="SELECT * FROM roles";
              $roles = $obj->consult($sql);
-             include_once '../view/Usuario/insert.php';
+             include_once './view/Usuario/Insert.php';
          }
      
          public function postInsert(){
@@ -53,7 +53,7 @@
              $usuarios= $obj->consult($sql);
      
      
-             include_once '../view/Usuario/consult.php';
+             include_once './view/Usuario/Consult.php';
      
          } 
      
@@ -65,7 +65,7 @@
              $usuario=$obj->consult($sql);
              $sql2="SELECT *FROM roles";
              $roles=$obj->consult($sql2);
-             include_once '../view/Usuario/update.php';
+             include_once './view/Usuario/Update.php';
          }
          public function postUpdate(){
              $obj=new UsuarioModel();
@@ -109,7 +109,7 @@
             $sql="SELECT u.*, r.rol_nombre FROM usuarios AS u, roles AS r WHERE u.rol_id=r.rol_id
             AND usu_id=$usu_id";
             $usuario=$obj->consult($sql);
-            include_once '../view/Usuario/delete.php';
+            include_once './view/Usuario/Delete.php';
         }
         public function postDelete(){
             $obj=new UsuarioModel();
@@ -153,7 +153,7 @@
             
             $usuarios=$obj->consult($sql);
 
-            include_once '../view/Usuario/filtro.php';
+            include_once './view/Usuario/filtro.php';
         }
 
 
@@ -167,7 +167,7 @@
             $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre, r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id AND (u.usu_docum LIKE '$buscar%'  OR u.usu_docum  LIKE '%$buscar% ' )";
             $usuarios=$obj->consult($sql);
 
-            include_once '../view/Usuario/filtro.php';
+            include_once './view/Usuario/filtro.php';
         }      
         
         public function filtro3(){
@@ -178,7 +178,7 @@
             $sql="SELECT u.usu_id, u.usu_docum, u.usu_clave, u.usu_nombre, r.rol_nombre FROM usuarios as u, roles as r WHERE u.rol_id=r.rol_id AND (r.rol_nombre LIKE '$buscar%' OR u.usu_docum  LIKE '%$buscar% ' )";
             $usuarios=$obj->consult($sql);
 
-            include_once '../view/Usuario/filtro.php';
+            include_once './view/Usuario/filtro.php';
         } */
 
         
