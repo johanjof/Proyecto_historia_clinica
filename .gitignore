@@ -1,0 +1,76 @@
+# Archivos de configuración sensibles
+.env
+.env.local
+.env.production
+.env.staging
+
+# Archivos de base de datos con datos reales
+*.sql
+!schema*.sql
+!sample-data.sql
+!structure*.sql
+
+# Carpetas de backups y dumps
+backups/
+dumps/
+database-backups/
+
+# Archivos de configuración antigua (por si acaso)
+lib/conf/conf_old.php
+config/database.php
+conexion.php
+
+# Logs
+*.log
+logs/
+error_log
+
+# Archivos temporales
+*.tmp
+*.temp
+temp/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Dependencias (si usas Composer)
+vendor/
+composer.lock
+
+# Archivos de sesión
+sessions/
+tmp/
+
+# Uploads de usuarios (pueden contener información sensible)
+uploads/
+files/
+attachments/
+
+# Cache
+cache/
+*.cache
+
+# Archivos de configuración del servidor
+.htaccess.backup
+nginx.conf
+apache.conf
+
+# Certificados SSL
+*.pem
+*.key
+*.crt
+*.csr
+
+# Variables de entorno específicas por servidor
+.env.server1
+.env.server2
+.env.production.local
